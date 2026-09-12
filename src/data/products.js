@@ -575,3 +575,6 @@ export const products = {
     netWeight: "500 gram",
 },
 };
+
+
+export default products;
