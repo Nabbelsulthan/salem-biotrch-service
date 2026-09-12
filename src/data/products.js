@@ -1,7 +1,20 @@
-import growMegImage from "../assets/products/grow-meg.png";
+// import growMegImage from "../assets/products/Grow-meg.png";
+// import growCImage from "../assets/products/grow-c.png";
+// import oxyFreshImage from "../assets/products/oxyfresh.png";
+// import softMaxImage from "../assets/products/soft-max.png";
+// import biocideImage from "../assets/products/biocide.png";
+// import ammoCureImage from "../assets/products/ammocure.jpeg";
+// import zooClearImage from "../assets/products/zoo-clear.png";
+// import proLifeImage from "../assets/products/prolife.jpeg";
+// import herculesTCImage from "../assets/products/hercules-tc.jpeg";
+// import zoogillImage from "../assets/products/zoo-gill.png";
+// import heptoGutImage from "../assets/products/heptogut.png";
+
+
+import growMegImage from "../assets/products/Grow-meg.png";
 import growCImage from "../assets/products/grow-c.png";
 import oxyFreshImage from "../assets/products/oxyfresh.png";
-import softMaxImage from "../assets/products/soft-max.png";
+import softMaxImage from "../assets/products/Soft-max.png";
 import biocideImage from "../assets/products/biocide.png";
 import ammoCureImage from "../assets/products/ammocure.jpeg";
 import zooClearImage from "../assets/products/zoo-clear.png";
@@ -521,15 +534,15 @@ export const products = {
     // hepto-gut
 
     "hepto-gut": {
-    number: "11",
-    name: "Hepto Gut",
-    category: "IMPROVE GUT HEALTH",
-    image: heptoGutImage,
+        number: "11",
+        name: "Hepto Gut",
+        category: "IMPROVE GUT HEALTH",
+        image: heptoGutImage,
 
-    heroDescription:
-        "Shrimp gut probiotics designed to support intestinal microbial balance, immunity, and nutrient absorption.",
+        heroDescription:
+            "Shrimp gut probiotics designed to support intestinal microbial balance, immunity, and nutrient absorption.",
 
-    description: `
+        description: `
     Shrimp gut probiotics are live, beneficial microorganisms supplemented in feed or water to
     improve intestinal microbial balance, boost immunity, and enhance nutrient absorption.
     They function as safe, eco-friendly alternatives to antibiotics, preventing disease by inhibiting
@@ -552,14 +565,14 @@ export const products = {
     and prevent disease, acting as an alternative to antibiotics.
   `,
 
-    benefits: [
-        "Contains specific species create antimicrobial content for gut pathogens, it's reduce the population and multiplication of pathogens",
-        "Improving the feed intake randomly",
-        "Protect gut from various infection rapidly",
-        "It helps to growth improvment of animal",
-    ],
+        benefits: [
+            "Contains specific species create antimicrobial content for gut pathogens, it's reduce the population and multiplication of pathogens",
+            "Improving the feed intake randomly",
+            "Protect gut from various infection rapidly",
+            "It helps to growth improvment of animal",
+        ],
 
-    dosage: `
+        dosage: `
     Take 5 gms /kg feed mix with good binder for regular condition
 
     Incase of gut affected take 10gms/kg feed
@@ -567,13 +580,13 @@ export const products = {
     Consult your technical expert based on your pond condition
   `,
 
-    storage: `
+        storage: `
     Storage at a cool and dark room,
     temperature should be 25°© not exceed
   `,
 
-    netWeight: "500 gram",
-},
+        netWeight: "500 gram",
+    },
 };
 
 
