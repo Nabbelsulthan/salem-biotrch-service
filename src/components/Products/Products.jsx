@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import growMegImage from "../../assets/products/grow-meg.png";
-import softMaxImage from "../../assets/products/soft-max.png";
+import growMegImage from "../../assets/products/Grow-meg.png";
+import softMaxImage from "../../assets/products/Soft-max.png";
 import zoogillImage from "../../assets/products/zoo-gill.png";
 import ammoCureImage from "../../assets/products/ammocure.jpeg";
 import growCImage from "../../assets/products/grow-c.png";
