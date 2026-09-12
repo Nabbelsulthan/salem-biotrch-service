@@ -1,0 +1,872 @@
+.grow-meg-page {
+  width: 100%;
+  overflow: hidden;
+  background: #f5f8f9;
+  color: #082f3d;
+}
+
+
+/* =========================================
+   COMMON
+   ========================================= */
+
+.grow-meg-container {
+  width: min(var(--container-wide), calc(100% - 120px));
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.grow-meg-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #082f3d;
+  color: white;
+}
+
+.grow-meg-hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(17, 178, 210, 0.3),
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #062c3a 0%,
+      #07536a 48%,
+      #0a91b1 100%
+    );
+
+  pointer-events: none;
+}
+
+.grow-meg-hero-bg::after {
+  content: "";
+
+  position: absolute;
+  width: 650px;
+  height: 650px;
+
+  right: -250px;
+  bottom: -280px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 0 80px rgba(255, 255, 255, 0.025),
+    0 0 0 160px rgba(255, 255, 255, 0.018);
+}
+
+.grow-meg-hero .grow-meg-container {
+  position: relative;
+  z-index: 2;
+  padding: 145px 0 90px;
+}
+
+
+/* BACK BUTTON */
+
+.grow-meg-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.grow-meg-back:hover {
+  color: white;
+  transform: translateX(-4px);
+}
+
+
+/* HERO GRID */
+
+.grow-meg-hero-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(500px, 1.1fr);
+
+  align-items: center;
+
+  gap: 90px;
+
+  margin-top: 55px;
+}
+
+
+/* CONTENT */
+
+.grow-meg-hero-content {
+  padding-bottom: 25px;
+}
+
+.grow-meg-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 30px;
+
+  color: #59d9ef;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.grow-meg-eyebrow span:first-child {
+  font-size: 13px;
+}
+
+.grow-meg-eyebrow i {
+  display: block;
+
+  width: 38px;
+  height: 1px;
+
+  background: #35c7e2;
+}
+
+
+.grow-meg-hero-content h1 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(90px, 10vw, 165px);
+  font-weight: 700;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.085em;
+}
+
+.grow-meg-hero-content h1 span {
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff 10%,
+      #62e0f1 90%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+.grow-meg-hero-description {
+  max-width: 510px;
+
+  margin: 45px 0 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+
+.grow-meg-hero-meta {
+  display: flex;
+  gap: 55px;
+
+  margin-top: 48px;
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.grow-meg-hero-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.grow-meg-hero-meta span {
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.grow-meg-hero-meta strong {
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE
+   ========================================= */
+
+.grow-meg-product-visual {
+  position: relative;
+
+  height: 650px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #b8dfe5;
+
+  isolation: isolate;
+}
+
+.grow-meg-image-backdrop {
+  position: absolute;
+  inset: -40px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  filter: blur(28px);
+
+  transform: scale(1.1);
+
+  opacity: 0.6;
+
+  z-index: 0;
+}
+
+.grow-meg-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(0, 75, 95, 0.15)
+    );
+
+  z-index: 1;
+}
+
+.grow-meg-product-image {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  filter:
+    drop-shadow(
+      0 35px 45px
+      rgba(0, 38, 50, 0.35)
+    );
+}
+
+.grow-meg-product-visual::before {
+  content: "";
+
+  position: absolute;
+  inset: 24px;
+
+  z-index: 4;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  pointer-events: none;
+}
+
+.grow-meg-image-number {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 38px;
+  left: 38px;
+
+  font-family: var(--font-heading);
+
+  font-size: 40px;
+  font-weight: 700;
+
+  color: rgba(8, 47, 61, 0.4);
+
+  letter-spacing: -0.05em;
+}
+
+
+/* =========================================
+   SECTION LABEL
+   ========================================= */
+
+.grow-meg-section-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 55px;
+
+  color: #079fc8;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.grow-meg-section-label span:first-child {
+  font-size: 13px;
+}
+
+.grow-meg-section-label::after {
+  content: "";
+
+  width: 42px;
+  height: 1px;
+
+  background: currentColor;
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   INTRODUCTION
+   ========================================= */
+
+.grow-meg-introduction {
+  padding: 150px 0 165px;
+
+  background: #f5f8f9;
+}
+
+.grow-meg-introduction-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(420px, 0.85fr);
+
+  gap: 120px;
+
+  align-items: start;
+}
+
+.grow-meg-introduction h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(60px, 6.5vw, 105px);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.075em;
+}
+
+.grow-meg-introduction h2 span {
+  color: #079fc8;
+}
+
+.grow-meg-introduction-copy {
+  padding-top: 10px;
+}
+
+.grow-meg-introduction-copy p {
+  margin: 0 0 24px;
+
+  color: #55737d;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.grow-meg-introduction-copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   BENEFITS
+   ========================================= */
+
+.grow-meg-benefits {
+  padding: 135px 0 150px;
+
+  background: #082f3d;
+  color: white;
+}
+
+.grow-meg-section-label.light {
+  color: #55d9ef;
+}
+
+.grow-meg-benefits-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(350px, 0.55fr);
+
+  gap: 100px;
+
+  align-items: end;
+
+  margin-bottom: 75px;
+}
+
+.grow-meg-benefits-heading h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(65px, 7vw, 115px);
+
+  line-height: 0.86;
+
+  letter-spacing: -0.075em;
+}
+
+.grow-meg-benefits-heading h2 span {
+  color: #49d5ed;
+}
+
+.grow-meg-benefits-heading p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* BENEFIT LIST */
+
+.grow-meg-benefits-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.grow-meg-benefit {
+  display: grid;
+
+  grid-template-columns: 70px 50px 1fr;
+
+  align-items: center;
+
+  min-height: 85px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.grow-meg-benefit-number {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.grow-meg-benefit-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(76, 215, 238, 0.5);
+  border-radius: 50%;
+
+  color: #4bd6ed;
+}
+
+.grow-meg-benefit p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   USAGE / DETAILS
+   ========================================= */
+
+.grow-meg-usage {
+  padding: 145px 0 160px;
+
+  background: #ffffff;
+}
+
+.grow-meg-usage-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1px;
+
+  background: rgba(8, 47, 61, 0.12);
+
+  border: 1px solid rgba(8, 47, 61, 0.12);
+}
+
+.grow-meg-detail-card {
+  min-height: 340px;
+
+  padding: 40px;
+
+  background: #ffffff;
+}
+
+.grow-meg-detail-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 55px;
+
+  color: #079fc8;
+
+  background: #eaf7f9;
+
+  border-radius: 50%;
+}
+
+.grow-meg-detail-label {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #849ba3;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.17em;
+}
+
+.grow-meg-detail-card h3 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: 35px;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+
+  color: #082f3d;
+}
+
+.grow-meg-detail-card p {
+  margin: 20px 0 0;
+
+  color: #67808a;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CTA
+   ========================================= */
+
+.grow-meg-cta {
+  padding: 110px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e7f5f7,
+      #d5edf1
+    );
+}
+
+.grow-meg-cta-inner {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.grow-meg-cta-inner > div > span {
+  color: #079fc8;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.grow-meg-cta-inner h2 {
+  margin: 20px 0 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(50px, 5vw, 82px);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.07em;
+
+  color: #082f3d;
+}
+
+.grow-meg-cta-inner h2 strong {
+  color: #079fc8;
+}
+
+.grow-meg-next-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 16px 18px 16px 24px;
+
+  color: white;
+
+  background: #079fc8;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  border-radius: 40px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.grow-meg-next-button svg {
+  width: 43px;
+  height: 43px;
+
+  padding: 11px;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.grow-meg-next-button:hover {
+  transform: translateY(-3px);
+  background: #057d9f;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+  .grow-meg-container {
+    width: min(100% - 80px, 1000px);
+  }
+
+  .grow-meg-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grow-meg-product-visual {
+    height: 580px;
+  }
+
+  .grow-meg-introduction-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .grow-meg-benefits-heading {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .grow-meg-usage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .grow-meg-container {
+    width: calc(100% - 44px);
+  }
+
+  .grow-meg-hero .grow-meg-container {
+    padding: 115px 0 60px;
+  }
+
+  .grow-meg-hero-grid {
+    gap: 50px;
+    margin-top: 40px;
+  }
+
+  .grow-meg-hero-content h1 {
+    font-size: clamp(75px, 22vw, 120px);
+  }
+
+  .grow-meg-hero-description {
+    margin-top: 32px;
+    font-size: 17px;
+  }
+
+  .grow-meg-hero-meta {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .grow-meg-product-visual {
+    height: 430px;
+  }
+
+  .grow-meg-product-image {
+    padding: 10px;
+  }
+
+  .grow-meg-product-visual::before {
+    inset: 15px;
+  }
+
+  .grow-meg-image-number {
+    top: 25px;
+    left: 25px;
+    font-size: 28px;
+  }
+
+  .grow-meg-introduction {
+    padding: 95px 0 110px;
+  }
+
+  .grow-meg-section-label {
+    margin-bottom: 38px;
+  }
+
+  .grow-meg-introduction-grid {
+    gap: 40px;
+  }
+
+  .grow-meg-introduction h2 {
+    font-size: 56px;
+  }
+
+  .grow-meg-introduction-copy p {
+    font-size: 15px;
+  }
+
+  .grow-meg-benefits {
+    padding: 95px 0 110px;
+  }
+
+  .grow-meg-benefits-heading {
+    margin-bottom: 50px;
+  }
+
+  .grow-meg-benefits-heading h2 {
+    font-size: 58px;
+  }
+
+  .grow-meg-benefits-heading p {
+    font-size: 15px;
+  }
+
+  .grow-meg-benefit {
+    grid-template-columns: 35px 40px 1fr;
+    min-height: 80px;
+  }
+
+  .grow-meg-benefit p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .grow-meg-usage {
+    padding: 95px 0 110px;
+  }
+
+  .grow-meg-usage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grow-meg-detail-card {
+    min-height: 280px;
+    padding: 30px;
+  }
+
+  .grow-meg-detail-icon {
+    margin-bottom: 35px;
+  }
+
+  .grow-meg-cta {
+    padding: 85px 0;
+  }
+
+  .grow-meg-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grow-meg-cta-inner h2 {
+    font-size: 50px;
+  }
+
+}

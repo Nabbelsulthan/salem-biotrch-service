@@ -1,0 +1,1521 @@
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background: #f4f8f9;
+    color: #082f3d;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.products-intro {
+    position: relative;
+    min-height: 72vh;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        150px var(--container-padding) 105px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8f9 0%,
+            #eef7f8 48%,
+            #dceff2 100%
+        );
+}
+
+
+/* subtle atmospheric glow */
+
+.products-intro-glow {
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    right: -220px;
+    top: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(19, 176, 208, 0.18) 0%,
+            rgba(19, 176, 208, 0.06) 42%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* water-like horizontal atmosphere */
+
+.products-intro-water {
+    position: absolute;
+
+    right: -5%;
+    bottom: 12%;
+
+    width: 58%;
+    height: 180px;
+
+    opacity: 0.55;
+
+    background:
+        repeating-linear-gradient(
+            180deg,
+            transparent 0,
+            transparent 16px,
+            rgba(17, 160, 190, 0.08) 17px,
+            transparent 18px
+        );
+
+    transform:
+        perspective(500px)
+        rotateX(62deg)
+        rotateZ(-4deg);
+
+    pointer-events: none;
+}
+
+
+.products-intro-inner {
+    position: relative;
+    z-index: 2;
+
+    width: min(
+        var(--container-wide),
+        100%
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.products-kicker {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 38px;
+
+    color: #079fc8;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.products-kicker span:first-child {
+    font-size: 13px;
+    color: #0aabc9;
+}
+
+
+.products-kicker-line {
+    width: 42px;
+    height: 1px;
+
+    background: #12aeca;
+}
+
+
+/* =========================================================
+   INTRO MAIN
+========================================================= */
+
+.products-intro-main {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(320px, 0.75fr);
+
+    align-items: end;
+
+    gap: 100px;
+}
+
+
+.products-intro h2 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size:
+        clamp(
+            78px,
+            9vw,
+            138px
+        );
+
+    font-weight: 700;
+
+    line-height: 0.84;
+
+    letter-spacing: -0.075em;
+
+    color: #082f3d;
+}
+
+
+.products-intro h2 span {
+    color: #079fc8;
+}
+
+
+/* =========================================================
+   INTRO COPY
+========================================================= */
+
+.products-intro-copy {
+    max-width: 470px;
+
+    padding-bottom: 7px;
+}
+
+
+.products-intro-copy p {
+    margin: 0;
+
+    color: #4f6973;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   INTRO STATS
+========================================================= */
+
+.products-intro-stats {
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 42px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(8, 47, 61, 0.14);
+}
+
+
+.products-intro-stats div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.products-intro-stats strong {
+    font-family: var(--font-heading);
+
+    font-size: 42px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+
+    color: #082f3d;
+}
+
+
+.products-intro-stats span {
+    color: #789099;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.products-explore {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 52px;
+
+    padding: 0;
+
+    color: #082f3d;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.product-button {
+    text-decoration: none;
+}
+
+
+.products-explore-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(8, 47, 61, 0.22);
+
+    border-radius: 50%;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.products-explore:hover {
+    color: #079fc8;
+}
+
+
+.products-explore:hover .products-explore-icon {
+    color: #ffffff;
+
+    background: #079fc8;
+
+    border-color: #079fc8;
+
+    transform: translateY(4px);
+}
+
+
+/* =========================================================
+   PRODUCT SHOWCASE
+========================================================= */
+
+.products-showcase {
+    width: 100%;
+}
+
+
+.product-slide {
+    position: relative;
+
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        90px var(--container-padding) 100px;
+
+    box-sizing: border-box;
+
+    background: #eaf3f5;
+
+    border-top:
+        1px solid rgba(8, 47, 61, 0.08);
+}
+
+
+.product-slide-light {
+    background: #ffffff;
+}
+
+
+.product-slide-inner {
+    position: relative;
+
+    width: min(
+        var(--container-wide),
+        100%
+    );
+
+    min-height: 70vh;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(360px, 0.82fr)
+        minmax(500px, 1.18fr);
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+/* =========================================================
+   PRODUCT INFO
+========================================================= */
+
+.product-info {
+    position: relative;
+    z-index: 3;
+
+    padding: 20px 0;
+}
+
+
+.product-topline {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+.product-number {
+    color: #079fc8;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+
+.product-category {
+    position: relative;
+
+    padding-left: 18px;
+
+    color: #55717b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.product-category::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #11aecf;
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
+
+.product-info h3 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size:
+        clamp(
+            72px,
+            7vw,
+            116px
+        );
+
+    font-weight: 700;
+
+    line-height: 0.86;
+
+    letter-spacing: -0.075em;
+
+    color: #082f3d;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.product-tagline {
+    max-width: 500px;
+
+    margin:
+        34px 0 0;
+
+    color: #294f5c;
+
+    font-size: 21px;
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.product-description {
+    max-width: 510px;
+
+    margin:
+        18px 0 0;
+
+    color: #69818a;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS
+========================================================= */
+
+.product-details {
+    display: flex;
+
+    gap: 42px;
+
+    margin-top: 38px;
+
+    padding-top: 23px;
+
+    border-top:
+        1px solid rgba(8, 47, 61, 0.13);
+}
+
+
+.product-detail {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.product-detail span {
+    color: #8a9ba1;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.17em;
+}
+
+
+.product-detail strong {
+    color: #174553;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PRODUCT BUTTON
+========================================================= */
+
+.product-button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 40px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #082f3d;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    cursor: pointer;
+}
+
+
+.product-button-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #079fc8;
+
+    color: #ffffff;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.product-button:hover .product-button-icon {
+    transform: translate(4px, -4px);
+
+    background: #057d9f;
+}
+
+
+/* =========================================================
+   PRODUCT VISUAL
+========================================================= */
+
+.product-visual {
+    position: relative;
+
+    height: 68vh;
+    min-height: 560px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #c7e4e8;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   FULL FRAME BACKGROUND
+========================================================= */
+
+.product-image-backdrop {
+    position: absolute;
+
+    inset: -35px;
+
+    z-index: 0;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: blur(24px);
+
+    transform: scale(1.08);
+
+    opacity: 0.55;
+
+    transition:
+        transform 1.2s ease,
+        opacity 0.8s ease;
+}
+
+
+/* =========================================================
+   IMAGE ATMOSPHERE
+========================================================= */
+
+.product-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.25),
+            rgba(0, 91, 111, 0.12)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ACTUAL PRODUCT IMAGE
+========================================================= */
+
+.product-image {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(8, 47, 61, 0.25)
+        );
+}
+
+
+.product-visual:hover .product-image {
+    filter:
+        drop-shadow(
+            0 32px 45px
+            rgba(8, 47, 61, 0.3)
+        );
+}
+
+
+.product-visual:hover
+.product-image-backdrop {
+    transform: scale(1.12);
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE NUMBER
+========================================================= */
+
+.product-visual-number {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 32px;
+    left: 32px;
+
+    color:
+        rgba(8, 47, 61, 0.42);
+
+    font-family: var(--font-heading);
+
+    font-size: 38px;
+    font-weight: 700;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   IMAGE PLACEHOLDER
+========================================================= */
+
+.product-placeholder {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.product-placeholder span {
+    color:
+        rgba(8, 47, 61, 0.12);
+
+    font-family: var(--font-heading);
+
+    font-size: 180px;
+    font-weight: 700;
+
+    line-height: 0.8;
+
+    letter-spacing: -0.08em;
+}
+
+
+.product-placeholder strong {
+    margin-top: 30px;
+
+    color: #174553;
+
+    font-family: var(--font-heading);
+
+    font-size: 42px;
+    font-weight: 700;
+
+    letter-spacing: -0.05em;
+}
+
+
+.product-placeholder small {
+    margin-top: 12px;
+
+    color: #6d858d;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.products-closing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding:
+        32px var(--container-padding);
+
+    border-top:
+        1px solid rgba(8, 47, 61, 0.1);
+
+    background: #f4f8f9;
+}
+
+
+.products-closing span {
+    color: #91a1a6;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.products-closing strong {
+    color: #0a8eaf;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .products-intro {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+
+    .product-slide {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+
+    .products-closing {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .products-intro {
+        min-height: 65vh;
+
+        padding:
+            130px 45px 90px;
+    }
+
+
+    .products-intro-main {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .products-intro-copy {
+        max-width: 600px;
+    }
+
+
+    .products-intro h2 {
+
+        font-size:
+            clamp(
+                70px,
+                10vw,
+                100px
+            );
+    }
+
+
+    /* =====================================
+       PRODUCT SLIDE
+    ===================================== */
+
+    .product-slide {
+
+        min-height: auto;
+
+        padding:
+            90px 45px 100px;
+    }
+
+
+    .product-slide-inner {
+
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        align-items: stretch;
+    }
+
+
+    /*
+       IMPORTANT:
+
+       On tablet the order is:
+
+       INFO TOP
+       IMAGE
+       DETAILS / BUTTON
+    */
+
+    .product-info {
+
+        order: 1;
+
+        padding:
+            20px 0 0;
+    }
+
+
+    /*
+       Move the visual immediately
+       after the product introduction.
+
+       Since product-details and
+       product-button are children of
+       product-info, we cannot reorder
+       them from here.
+
+       Therefore the visual itself is
+       pulled upward visually.
+    */
+
+    .product-visual {
+
+        order: 2;
+
+        width: 100%;
+
+        height: 620px;
+
+        min-height: 0;
+
+        margin-top: 45px;
+
+        margin-bottom: 0;
+    }
+
+
+    .product-info h3 {
+
+        font-size:
+            clamp(
+                70px,
+                10vw,
+                100px
+            );
+    }
+
+
+    /*
+       Keep the lower product information
+       visually below the image.
+
+       These elements are moved down using
+       CSS grid is not possible because they
+       are inside .product-info.
+
+       The recommended JSX structure is:
+       info intro → visual → details.
+    */
+
+}
+
+
+/* =========================================================
+   TABLET PRODUCT CONTENT FIX
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 1050px) {
+
+    /*
+       Product info becomes a grid so we can
+       position the visual between the upper
+       content and lower content when the
+       JSX contains the visual as a sibling.
+
+       This also gives better spacing on tablets.
+    */
+
+    .product-slide-inner {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .product-info {
+
+        display: contents;
+    }
+
+
+    .product-topline {
+
+        grid-column: 1;
+        grid-row: 1;
+
+        margin-top: 20px;
+    }
+
+
+    .product-info h3 {
+
+        grid-column: 1;
+        grid-row: 2;
+
+    }
+
+
+    .product-tagline {
+
+        grid-column: 1;
+        grid-row: 3;
+
+    }
+
+
+    .product-description {
+
+        grid-column: 1;
+        grid-row: 4;
+
+        margin-bottom: 0;
+    }
+
+
+    .product-visual {
+
+        grid-column: 1;
+        grid-row: 5;
+
+        margin-top: 45px;
+
+        margin-bottom: 45px;
+    }
+
+
+    .product-details {
+
+        grid-column: 1;
+        grid-row: 6;
+
+        margin-top: 0;
+    }
+
+
+    .product-button {
+
+        grid-column: 1;
+        grid-row: 7;
+
+        margin-bottom: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .products-intro {
+
+        min-height: auto;
+
+        padding:
+            110px 22px 75px;
+    }
+
+
+    .products-intro-glow {
+
+        width: 450px;
+        height: 450px;
+
+        right: -220px;
+        top: -130px;
+    }
+
+
+    .products-kicker {
+
+        gap: 9px;
+
+        margin-bottom: 28px;
+
+        font-size: 9px;
+    }
+
+
+    .products-kicker span:first-child {
+
+        font-size: 10px;
+    }
+
+
+    .products-kicker-line {
+
+        width: 26px;
+    }
+
+
+    .products-intro-main {
+
+        gap: 32px;
+    }
+
+
+    .products-intro h2 {
+
+        font-size:
+            clamp(
+                56px,
+                16vw,
+                78px
+            );
+
+        line-height: 0.9;
+    }
+
+
+    .products-intro-copy p {
+
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+
+    .products-intro-stats {
+
+        gap: 35px;
+
+        margin-top: 30px;
+    }
+
+
+    .products-intro-stats strong {
+
+        font-size: 34px;
+    }
+
+
+    .products-intro-stats span {
+
+        font-size: 8px;
+    }
+
+
+    .products-explore {
+
+        margin-top: 38px;
+
+        font-size: 10px;
+    }
+
+
+    .products-explore-icon {
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* =====================================
+       PRODUCT SLIDE
+    ===================================== */
+
+    .product-slide {
+
+        min-height: auto;
+
+        padding:
+            70px 22px 80px;
+    }
+
+
+    /*
+       Stack the product vertically.
+    */
+
+    .product-slide-inner {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+        min-height: auto;
+    }
+
+
+    /*
+       IMPORTANT:
+
+       Turn product-info into contents so
+       its children become direct grid
+       items.
+
+       This allows us to place the image
+       between description and details.
+    */
+
+    .product-info {
+
+        display: contents;
+    }
+
+
+    /* =====================================
+       TOP PRODUCT INFORMATION
+    ===================================== */
+
+    .product-topline {
+
+        grid-column: 1;
+        grid-row: 1;
+
+        margin-top: 0;
+
+        margin-bottom: 22px;
+
+        gap: 12px;
+    }
+
+
+    .product-number {
+
+        font-size: 11px;
+    }
+
+
+    .product-category {
+
+        padding-left: 14px;
+
+        font-size: 8px;
+
+        letter-spacing: 0.14em;
+    }
+
+
+    .product-info h3 {
+
+        grid-column: 1;
+        grid-row: 2;
+
+        font-size:
+            clamp(
+                52px,
+                15vw,
+                75px
+            );
+
+        line-height: 0.9;
+    }
+
+
+    .product-tagline {
+
+        grid-column: 1;
+        grid-row: 3;
+
+        margin-top: 25px;
+
+        font-size: 18px;
+
+        line-height: 1.5;
+    }
+
+
+    .product-description {
+
+        grid-column: 1;
+        grid-row: 4;
+
+        margin-top: 15px;
+
+        margin-bottom: 0;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       IMAGE — NOW DIRECTLY AFTER DESCRIPTION
+    ===================================== */
+
+    .product-visual {
+
+        grid-column: 1;
+        grid-row: 5;
+
+        width: 100%;
+
+        height: 420px;
+
+        min-height: 0;
+
+        margin-top: 38px;
+
+        margin-bottom: 38px;
+
+        order: initial;
+    }
+
+
+    .product-image {
+
+        padding: 35px;
+    }
+
+
+    .product-visual-number {
+
+        top: 24px;
+        left: 24px;
+
+        font-size: 28px;
+    }
+
+
+    /* =====================================
+       DETAILS — BELOW IMAGE
+    ===================================== */
+
+    .product-details {
+
+        grid-column: 1;
+        grid-row: 6;
+
+        gap: 30px;
+
+        margin-top: 0;
+
+        padding-top: 23px;
+    }
+
+
+    .product-detail span {
+
+        font-size: 8px;
+    }
+
+
+    .product-detail strong {
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================
+       BUTTON — BELOW DETAILS
+    ===================================== */
+
+    .product-button {
+
+        grid-column: 1;
+        grid-row: 7;
+
+        margin-top: 32px;
+
+        margin-bottom: 0;
+
+        font-size: 10px;
+    }
+
+
+    .product-button-icon {
+
+        width: 44px;
+        height: 44px;
+    }
+
+
+    /* =====================================
+       CLOSING
+    ===================================== */
+
+    .products-closing {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding:
+            25px 22px;
+    }
+
+
+    .products-closing span,
+    .products-closing strong {
+
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .products-intro {
+
+        padding-top: 95px;
+    }
+
+
+    .products-intro h2 {
+
+        font-size: 54px;
+    }
+
+
+    .product-info h3 {
+
+        font-size: 50px;
+    }
+
+
+    .product-visual {
+
+        height: 350px;
+
+        margin-top: 32px;
+
+        margin-bottom: 32px;
+    }
+
+
+    .product-image {
+
+        padding: 25px;
+    }
+
+
+    .product-placeholder span {
+
+        font-size: 95px;
+    }
+
+
+    .product-placeholder strong {
+
+        font-size: 28px;
+    }
+
+}

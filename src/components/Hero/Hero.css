@@ -1,0 +1,737 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #062b3a;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.hero-media {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+}
+
+
+.hero-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    will-change: transform;
+
+}
+
+
+/* =========================================
+   CINEMATIC OVERLAY
+========================================= */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            rgba(2, 28, 40, 0.86) 0%,
+
+            rgba(2, 34, 47, 0.72) 28%,
+
+            rgba(2, 38, 50, 0.42) 52%,
+
+            rgba(2, 38, 50, 0.12) 78%,
+
+            rgba(2, 38, 50, 0.05) 100%
+        );
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hero-container {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: min(
+        var(--container-wide),
+        100%
+    );
+
+    min-height: 100svh;
+
+    margin: 0 auto;
+
+    padding:
+
+        150px
+
+        var(--container-padding)
+
+        100px;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.hero-content {
+
+    width: 100%;
+
+    max-width: 920px;
+
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.hero-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+
+    color:
+        rgba(255, 255, 255, 0.88);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.17em;
+
+    line-height: 1.2;
+
+}
+
+
+.hero-eyebrow-line {
+
+    width: 4px;
+
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background:
+        #13c5ec;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(19, 197, 236, 0.35);
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.hero h1 {
+
+    margin: 0;
+
+    max-width: 1000px;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+
+        clamp(
+            64px,
+            7.8vw,
+            112px
+        );
+
+    font-weight: 700;
+
+    line-height: 0.94;
+
+    letter-spacing:
+        -0.065em;
+
+}
+
+
+.heading-white {
+
+    color: #ffffff;
+
+}
+
+
+.heading-gradient {
+
+    color: transparent;
+
+    background:
+
+        linear-gradient(
+            100deg,
+
+            #1599ff 0%,
+
+            #20bdf0 45%,
+
+            #91e9f3 100%
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+
+    max-width: 760px;
+
+    margin-top: 34px;
+
+    color:
+        rgba(255, 255, 255, 0.86);
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    letter-spacing: 0.005em;
+
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.hero-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+
+    margin-top: 38px;
+
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.hero-primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 205px;
+
+    height: 60px;
+
+    padding: 0 30px;
+
+    color: #ffffff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+
+            #079ed0,
+
+            #13bce3
+        );
+
+    border:
+
+        1px solid
+        rgba(89, 221, 244, 0.25);
+
+    border-radius: 17px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0, 153, 202, 0.20);
+
+    transition:
+
+        transform 0.35s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+
+        box-shadow 0.35s ease,
+
+        filter 0.35s ease;
+
+}
+
+
+.hero-primary-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    filter:
+        brightness(1.06);
+
+    box-shadow:
+
+        0 17px 38px
+        rgba(0, 153, 202, 0.30);
+
+}
+
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.hero-secondary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 170px;
+
+    height: 60px;
+
+    padding: 0 30px;
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+
+        2px solid
+        rgba(255, 255, 255, 0.72);
+
+    border-radius: 17px;
+
+    backdrop-filter:
+        blur(5px);
+
+    -webkit-backdrop-filter:
+        blur(5px);
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition:
+
+        background 0.35s ease,
+
+        border-color 0.35s ease,
+
+        transform 0.35s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+.hero-secondary-button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border-color:
+        #ffffff;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1600px) {
+
+    .hero-container {
+
+        padding-left: 64px;
+
+        padding-right: 64px;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .hero-overlay {
+
+        background:
+
+            linear-gradient(
+                90deg,
+
+                rgba(2, 28, 40, 0.90) 0%,
+
+                rgba(2, 34, 47, 0.70) 45%,
+
+                rgba(2, 38, 50, 0.30) 100%
+            );
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+
+            clamp(
+                54px,
+                8vw,
+                80px
+            );
+
+    }
+
+
+    .hero-description {
+
+        font-size: 18px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        min-height:
+            100svh;
+
+    }
+
+
+    .hero-image {
+
+        object-position:
+            65% center;
+
+    }
+
+
+    .hero-overlay {
+
+        background:
+
+            linear-gradient(
+                180deg,
+
+                rgba(2, 28, 40, 0.38) 0%,
+
+                rgba(2, 28, 40, 0.58) 35%,
+
+                rgba(2, 28, 40, 0.88) 100%
+            );
+
+    }
+
+
+    .hero-container {
+
+        min-height:
+            100svh;
+
+        padding:
+
+            145px
+            22px
+            75px;
+
+        align-items:
+            flex-end;
+
+    }
+
+
+    .hero-content {
+
+        max-width:
+            100%;
+
+    }
+
+
+    .hero-eyebrow {
+
+        gap: 10px;
+
+        margin-bottom: 20px;
+
+        font-size: 9px;
+
+        letter-spacing:
+            0.13em;
+
+    }
+
+
+    .hero-eyebrow-line {
+
+        width: 3px;
+
+        height: 25px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+
+            clamp(
+                45px,
+                12vw,
+                66px
+            );
+
+        line-height:
+            0.96;
+
+        letter-spacing:
+            -0.055em;
+
+    }
+
+
+    .hero-description {
+
+        margin-top: 24px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .desktop-break {
+
+        display: none;
+
+    }
+
+
+    .hero-actions {
+
+        width: 100%;
+
+        gap: 10px;
+
+        margin-top: 29px;
+
+    }
+
+
+    .hero-primary-button,
+    .hero-secondary-button {
+
+        min-width: 0;
+
+        flex: 1;
+
+        height: 54px;
+
+        padding:
+            0 15px;
+
+        border-radius: 14px;
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+    .hero-container {
+
+        padding:
+
+            135px
+            18px
+            65px;
+
+    }
+
+
+    .hero-image {
+
+        object-position:
+            68% center;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            43px;
+
+    }
+
+
+    .hero-description {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .hero-actions {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .hero-primary-button,
+    .hero-secondary-button {
+
+        width: 100%;
+
+        flex: none;
+
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-image {
+
+        transform: none !important;
+
+    }
+
+}

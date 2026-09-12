@@ -1,0 +1,936 @@
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #f5f8f9;
+
+    color: #082f3d;
+
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.about-container {
+
+    width: min(
+        var(--container-wide),
+        100%
+    );
+
+    margin: 0 auto;
+
+    padding:
+
+        145px
+
+        var(--container-padding)
+
+        125px;
+
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.about-intro {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    column-gap: 80px;
+
+    align-items: end;
+
+    margin-bottom: 80px;
+
+}
+
+
+.about-kicker {
+
+    grid-column:
+        1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 30px;
+
+    color: #16829e;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+}
+
+
+.about-kicker > span:first-child {
+
+    color: #0ca6ca;
+
+    font-size: 12px;
+
+}
+
+
+.about-kicker-line {
+
+    width: 32px;
+
+    height: 1px;
+
+    background: #11aecf;
+
+}
+
+
+.about-intro h2 {
+
+    margin: 0;
+
+    max-width: 800px;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+
+        clamp(
+            62px,
+            7vw,
+            104px
+        );
+
+    font-weight: 700;
+
+    line-height: 0.91;
+
+    letter-spacing:
+        -0.065em;
+
+    color: #082f3d;
+
+}
+
+
+.about-intro h2 span {
+
+    color: #079fc8;
+
+}
+
+
+.about-intro-bottom {
+
+    align-self: end;
+
+    padding-bottom: 5px;
+
+}
+
+
+.about-intro-bottom p {
+
+    max-width: 430px;
+
+    margin: 0;
+
+    color: #607a84;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+.about-intro-mark {
+
+    display: block;
+
+    margin-top: 24px;
+
+    color:
+        rgba(8, 47, 61, 0.16);
+
+    font-family:
+        var(--font-heading);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.about-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 570px;
+
+    overflow: hidden;
+
+    background: #0a3442;
+
+}
+
+
+.about-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(3, 30, 40, 0.45) 100%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.about-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transform: scale(1.01);
+
+    transition:
+
+        transform 1.2s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+.about-image:hover img {
+
+    transform: scale(1.045);
+
+}
+
+
+.about-image-label {
+
+    position: absolute;
+
+    left: 30px;
+
+    right: 30px;
+
+    bottom: 27px;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+}
+
+
+.about-image-label span:last-child {
+
+    color: #58d9ed;
+
+}
+
+
+/* =========================================
+   APPROACH
+========================================= */
+
+.about-approach {
+
+    display: grid;
+
+    grid-template-columns:
+        0.85fr 1.15fr;
+
+    gap: 100px;
+
+    margin-top: 105px;
+
+    padding-top: 75px;
+
+    border-top:
+        1px solid
+        rgba(8, 47, 61, 0.13);
+
+}
+
+
+.about-approach-heading > span {
+
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: #0b9ec5;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.19em;
+
+}
+
+
+.about-approach-heading h3 {
+
+    margin: 0;
+
+    color: #082f3d;
+
+    font-family:
+        var(--font-heading);
+
+    font-size:
+
+        clamp(
+            38px,
+            4vw,
+            58px
+        );
+
+    font-weight: 700;
+
+    line-height: 0.98;
+
+    letter-spacing:
+        -0.055em;
+
+}
+
+
+/* =========================================
+   APPROACH ITEMS
+========================================= */
+
+.about-approach-items {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    align-self: end;
+
+}
+
+
+.about-approach-item {
+
+    min-height: 150px;
+
+    padding:
+        0 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+.about-approach-item:first-child {
+
+    padding-left: 0;
+
+}
+
+
+.about-approach-item
++ .about-approach-item {
+
+    border-left:
+        1px solid
+        rgba(8, 47, 61, 0.13);
+
+}
+
+
+.about-item-number {
+
+    color: #0ca7ca;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.about-approach-item h4 {
+
+    margin: 22px 0 0;
+
+    color: #103d4b;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+.about-approach-item p {
+
+    max-width: 180px;
+
+    margin: 8px 0 0;
+
+    color: #71868e;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.about-closing {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 85px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(8, 47, 61, 0.10);
+
+    color: #93a3a8;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2em;
+
+}
+
+
+.about-closing::before {
+
+    content: "";
+
+    width: 35px;
+
+    height: 1px;
+
+    background: #13afd0;
+
+}
+
+
+.about-closing strong {
+
+    color: #0b8caf;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1600px) {
+
+    .about-container {
+
+        padding-left: 64px;
+
+        padding-right: 64px;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .about-container {
+
+        padding-top: 115px;
+
+        padding-bottom: 100px;
+
+    }
+
+
+    .about-intro {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+
+    }
+
+
+    .about-kicker {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .about-intro-bottom {
+
+        padding-bottom: 0;
+
+    }
+
+
+    .about-intro h2 {
+
+        font-size:
+            clamp(
+                55px,
+                8vw,
+                78px
+            );
+
+    }
+
+
+    .about-image {
+
+        height:
+            500px;
+
+    }
+
+
+    .about-approach {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 55px;
+
+        margin-top:
+            80px;
+
+        padding-top:
+            60px;
+
+    }
+
+
+    .about-approach-items {
+
+        max-width:
+            750px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .about-container {
+
+        padding:
+
+            90px
+
+            22px
+
+            80px;
+
+    }
+
+
+    .about-intro {
+
+        margin-bottom:
+            55px;
+
+    }
+
+
+    .about-kicker {
+
+        gap: 9px;
+
+        margin-bottom:
+            22px;
+
+        font-size:
+            9px;
+
+        letter-spacing:
+            0.14em;
+
+    }
+
+
+    .about-kicker > span:first-child {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .about-kicker-line {
+
+        width:
+            24px;
+
+    }
+
+
+    .about-intro h2 {
+
+        font-size:
+
+            clamp(
+                44px,
+                12vw,
+                65px
+            );
+
+        line-height:
+            0.95;
+
+    }
+
+
+    .about-intro-bottom {
+
+        margin-top:
+            27px;
+
+    }
+
+
+    .about-intro-bottom p {
+
+        max-width:
+            500px;
+
+        font-size:
+            15px;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    .about-intro-mark {
+
+        margin-top:
+            18px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .about-image {
+
+        height:
+            390px;
+
+    }
+
+
+    .about-image-label {
+
+        left:
+            18px;
+
+        right:
+            18px;
+
+        bottom:
+            18px;
+
+        font-size:
+            7px;
+
+        letter-spacing:
+            0.14em;
+
+    }
+
+
+    .about-approach {
+
+        margin-top:
+            65px;
+
+        padding-top:
+            45px;
+
+        gap:
+            45px;
+
+    }
+
+
+    .about-approach-heading > span {
+
+        margin-bottom:
+            17px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    .about-approach-heading h3 {
+
+        font-size:
+            clamp(
+                34px,
+                9.5vw,
+                48px
+            );
+
+        line-height:
+            1;
+
+    }
+
+
+    .about-approach-items {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .about-approach-item {
+
+        min-height:
+            auto;
+
+        padding:
+            22px 0;
+
+    }
+
+
+    .about-approach-item:first-child {
+
+        padding-top:
+            0;
+
+    }
+
+
+    .about-approach-item
+    + .about-approach-item {
+
+        border-left:
+            0;
+
+        border-top:
+            1px solid
+            rgba(8, 47, 61, 0.12);
+
+    }
+
+
+    .about-approach-item h4 {
+
+        margin-top:
+            15px;
+
+    }
+
+
+    .about-approach-item p {
+
+        max-width:
+            100%;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .about-closing {
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            8px;
+
+        margin-top:
+            55px;
+
+        font-size:
+            7px;
+
+        line-height:
+            1.5;
+
+    }
+
+
+    .about-closing::before {
+
+        width:
+            24px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+    .about-container {
+
+        padding:
+
+            80px
+
+            18px
+
+            70px;
+
+    }
+
+
+    .about-intro h2 {
+
+        font-size:
+            42px;
+
+    }
+
+
+    .about-image {
+
+        height:
+            330px;
+
+    }
+
+
+    .about-image-label {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            4px;
+
+    }
+
+
+    .about-approach-heading h3 {
+
+        font-size:
+            34px;
+
+    }
+
+}
