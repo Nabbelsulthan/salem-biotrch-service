@@ -24,7 +24,7 @@ import {
     useNavigate
 } from "react-router-dom";
 
-import logo from "../../assets/logos/sbs-logo.png";
+import logo from "../../assets/logos/sbs-logo.PNG";
 
 import "./Navbar.css";
 
