@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import growMegImage from "../../assets/products/Grow-meg.png";
 import softMaxImage from "../../assets/products/Soft-max.png";
 import zoogillImage from "../../assets/products/zoo-gill.png";
-import ammoCureImage from "../../assets/products/ammocure.jpeg";
+import ammoCureImage from "../../assets/products/ammo-cure.jpeg";
 import growCImage from "../../assets/products/grow-c.png";
 import herculesImage from "../../assets/products/hercules-tc.jpeg";
 import zooclearImage from "../../assets/products/zoo-clear.png";
@@ -20,19 +20,19 @@ import "./Products.css";
 const products = [
     {
         number: "01",
-        name: "Grow Meg",
+        name: "GROW MEG",
         category: "IMMUNE BOOSTER",
         tagline:
             "Support stronger shrimp throughout the farming cycle.",
         description:
-            "A vitamin, amino acid and essential mineral formulation designed to support growth, health and survival of shrimp and other aquatic animals.",
+            "A vitamin, amino acid and essential mineral formulation designed to support growth, health and survival of shrimp.",
         image: growMegImage,
         focus: "Shrimp Health",
     },
 
     {
         number: "02",
-        name: "Grow C",
+        name: "GROW C",
         category: "MAKE A HEALTHY SHRIMP",
         tagline:
             "Supporting shrimp health and development.",
@@ -44,7 +44,7 @@ const products = [
 
     {
         number: "03",
-        name: "Oxy Fresh",
+        name: "OXY FRESH",
         category: "IMPROVE MORE OXYGEN",
         tagline:
             "Supporting healthier pond water conditions.",
@@ -56,19 +56,19 @@ const products = [
 
     {
         number: "04",
-        name: "SoftMAX",
+        name: "SOFT MAX",
         category: "MOST POWERFUL SOFTENER",
         tagline:
             "Improving pond water conditions.",
         description:
-            "An EDTA-based water treatment solution designed to remove heavy metals and soften water hardness.",
+            "An EDTA-based water treatment solution designed to reduce heavy metals and soften water hardness.",
         image: softMaxImage,
         focus: "Water Quality",
     },
 
     {
         number: "05",
-        name: "Biocide",
+        name: "BIOCIDES",
         category: "CONTROL DISEASE OUTBREAK",
         tagline:
             "Supporting disease management in aquaculture.",
@@ -80,7 +80,7 @@ const products = [
 
     {
         number: "06",
-        name: "AmmoCure",
+        name: "AMMO CURE",
         category: "REDUCING AMMONIA & NITRITE",
         tagline:
             "Helping maintain healthier pond water.",
@@ -92,7 +92,7 @@ const products = [
 
     {
         number: "07",
-        name: "ZOO Clear",
+        name: "ZOO CLEAR",
         category: "CLEAR ZOOTHAMNIUM",
         tagline:
             "Supporting cleaner and healthier shrimp.",
@@ -104,7 +104,7 @@ const products = [
 
     {
         number: "08",
-        name: "PROLife",
+        name: "PROLIFE",
         category: "EXTEND YOUR POND LIFE",
         tagline:
             "Supporting pond performance through probiotics.",
@@ -116,19 +116,18 @@ const products = [
 
     {
         number: "09",
-        name: "Hercules TC",
+        name: "HERCULES TC",
         category: "MAKE A SHRIMP STRONG",
         tagline:
             "Supporting shrimp nutrition and resilience.",
         description:
-            "A solution focused on shrimp food intake, stress conditions, gut health and protection from harmful conditions.",
-        focus: "Shrimp Health",
+        "A combination of natural mixed minerals, gives good health to shrimp, and pond environment.",
         image: herculesImage,
     },
 
     {
         number: "10",
-        name: "ZOO Gill",
+        name: "ZOO GILL",
         category: "REDUCE GILL INFECTION",
         tagline:
             "Supporting healthier shrimp gills.",
@@ -140,7 +139,7 @@ const products = [
 
     {
         number: "11",
-        name: "Hepto Gut",
+        name: "HEPTO GUT",
         category: "IMPROVE GUT HEALTH",
         tagline:
             "Supporting healthy shrimp gut function.",
@@ -218,7 +217,7 @@ const Products = () => {
                             ease,
                         }}
                     >
-                        <span>02</span>
+                        <span>03</span>
                         <span className="products-kicker-line" />
                         <span>OUR PRODUCTS</span>
                     </motion.div>

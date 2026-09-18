@@ -46,6 +46,10 @@ import Contact from "./components/Contact/Contact";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
+import Certificate from "./components/Certificates/Certificates";
+
+import FloatingWhatsApp from "./components/FloatingWhatsApp/FloatingWhatsApp";
+
 
 function App() {
 
@@ -72,6 +76,7 @@ function App() {
               <>
                 <Hero />
                 <About />
+              <Certificate />
                 <Products />
                 <Contact />
               </>
@@ -107,6 +112,13 @@ function App() {
       </main>
 
       <Footer />
+
+
+      {/* =========================
+          FLOATING WHATSAPP
+          ========================= */}
+
+      <FloatingWhatsApp />
 
     </BrowserRouter>
 

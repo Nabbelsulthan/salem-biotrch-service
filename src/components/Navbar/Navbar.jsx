@@ -1,750 +1,8 @@
-// // import { useEffect, useState } from "react";
-// // import { motion, AnimatePresence } from "framer-motion";
-// // import {
-// //     Menu,
-// //     X,
-// //     ArrowUpRight
-// // } from "lucide-react";
 
-// // import logo from "../../assets/logos/salem-biotech-logo.png";
 
-// // import "./Navbar.css";
 
-// // const navLinks = [
-// //     {
-// //         label: "Home",
-// //         href: "#home",
-// //     },
-// //     {
-// //         label: "Products",
-// //         href: "#products",
-// //     },
-// //     {
-// //         label: "Contact",
-// //         href: "#contact",
-// //     },
-// // ];
 
 
-// // const Navbar = () => {
-
-// //     const [scrolled, setScrolled] = useState(false);
-// //     const [menuOpen, setMenuOpen] = useState(false);
-
-
-// //     useEffect(() => {
-
-// //         const handleScroll = () => {
-
-// //             setScrolled(window.scrollY > 40);
-
-// //         };
-
-
-// //         window.addEventListener(
-// //             "scroll",
-// //             handleScroll
-// //         );
-
-
-// //         return () => {
-
-// //             window.removeEventListener(
-// //                 "scroll",
-// //                 handleScroll
-// //             );
-
-// //         };
-
-// //     }, []);
-
-
-// //     const handleLinkClick = () => {
-
-// //         setMenuOpen(false);
-
-// //     };
-
-
-// //     return (
-
-// //         <>
-
-// //             <motion.header
-// //                 className={`navbar ${
-// //                     scrolled ? "navbar-scrolled" : ""
-// //                 }`}
-// //                 initial={{
-// //                     y: -100,
-// //                     opacity: 0,
-// //                 }}
-// //                 animate={{
-// //                     y: 0,
-// //                     opacity: 1,
-// //                 }}
-// //                 transition={{
-// //                     duration: 0.7,
-// //                     ease: [0.22, 1, 0.36, 1],
-// //                 }}
-// //             >
-
-// //                 <div className="navbar-inner">
-
-
-// //                     {/* Logo */}
-
-// //                     <a
-// //                         href="#home"
-// //                         className="navbar-logo"
-// //                         onClick={handleLinkClick}
-// //                     >
-
-// //                         <img
-// //                             src={logo}
-// //                             alt="Salem Biotech Service"
-// //                         />
-
-// //                     </a>
-
-
-
-// //                     {/* Desktop Navigation */}
-
-// //                     <nav className="navbar-links">
-
-// //                         {navLinks.map(
-// //                             (link, index) => (
-
-// //                                 <motion.a
-// //                                     key={link.label}
-// //                                     href={link.href}
-// //                                     className="navbar-link"
-// //                                     initial={{
-// //                                         opacity: 0,
-// //                                         y: -10,
-// //                                     }}
-// //                                     animate={{
-// //                                         opacity: 1,
-// //                                         y: 0,
-// //                                     }}
-// //                                     transition={{
-// //                                         delay:
-// //                                             0.15 +
-// //                                             index * 0.08,
-// //                                         duration: 0.45,
-// //                                     }}
-// //                                 >
-
-// //                                     <span>
-// //                                         {link.label}
-// //                                     </span>
-
-// //                                     <span className="navbar-link-line" />
-
-// //                                 </motion.a>
-
-// //                             )
-// //                         )}
-
-// //                     </nav>
-
-
-
-// //                     {/* CTA */}
-
-// //                     <motion.a
-// //                         href="#contact"
-// //                         className="navbar-cta"
-// //                         whileHover={{
-// //                             scale: 1.03,
-// //                         }}
-// //                         whileTap={{
-// //                             scale: 0.97,
-// //                         }}
-// //                     >
-
-// //                         <span>
-// //                             Enquire Now
-// //                         </span>
-
-// //                         <ArrowUpRight
-// //                             size={17}
-// //                             strokeWidth={2}
-// //                         />
-
-// //                     </motion.a>
-
-
-
-// //                     {/* Mobile Menu Button */}
-
-// //                     <button
-// //                         type="button"
-// //                         className="navbar-menu-button"
-// //                         aria-label={
-// //                             menuOpen
-// //                                 ? "Close menu"
-// //                                 : "Open menu"
-// //                         }
-// //                         aria-expanded={menuOpen}
-// //                         onClick={() =>
-// //                             setMenuOpen(
-// //                                 !menuOpen
-// //                             )
-// //                         }
-// //                     >
-
-// //                         {menuOpen ? (
-// //                             <X size={24} />
-// //                         ) : (
-// //                             <Menu size={24} />
-// //                         )}
-
-// //                     </button>
-
-// //                 </div>
-
-// //             </motion.header>
-
-
-
-// //             {/* Mobile Menu */}
-
-// //             <AnimatePresence>
-
-// //                 {menuOpen && (
-
-// //                     <motion.div
-// //                         className="mobile-menu"
-// //                         initial={{
-// //                             opacity: 0,
-// //                             y: -20,
-// //                         }}
-// //                         animate={{
-// //                             opacity: 1,
-// //                             y: 0,
-// //                         }}
-// //                         exit={{
-// //                             opacity: 0,
-// //                             y: -20,
-// //                         }}
-// //                         transition={{
-// //                             duration: 0.35,
-// //                             ease: [0.22, 1, 0.36, 1],
-// //                         }}
-// //                     >
-
-// //                         <div className="mobile-menu-content">
-
-// //                             {navLinks.map(
-// //                                 (link, index) => (
-
-// //                                     <motion.a
-// //                                         key={link.label}
-// //                                         href={link.href}
-// //                                         className="mobile-menu-link"
-// //                                         onClick={
-// //                                             handleLinkClick
-// //                                         }
-// //                                         initial={{
-// //                                             opacity: 0,
-// //                                             x: -20,
-// //                                         }}
-// //                                         animate={{
-// //                                             opacity: 1,
-// //                                             x: 0,
-// //                                         }}
-// //                                         transition={{
-// //                                             delay:
-// //                                                 index *
-// //                                                 0.07,
-// //                                         }}
-// //                                     >
-
-// //                                         <span>
-// //                                             {link.label}
-// //                                         </span>
-
-// //                                         <ArrowUpRight
-// //                                             size={20}
-// //                                         />
-
-// //                                     </motion.a>
-
-// //                                 )
-// //                             )}
-
-
-// //                             <motion.a
-// //                                 href="#contact"
-// //                                 className="mobile-menu-cta"
-// //                                 onClick={
-// //                                     handleLinkClick
-// //                                 }
-// //                                 initial={{
-// //                                     opacity: 0,
-// //                                     y: 15,
-// //                                 }}
-// //                                 animate={{
-// //                                     opacity: 1,
-// //                                     y: 0,
-// //                                 }}
-// //                                 transition={{
-// //                                     delay: 0.25,
-// //                                 }}
-// //                             >
-
-// //                                 Enquire Now
-
-// //                                 <ArrowUpRight
-// //                                     size={19}
-// //                                 />
-
-// //                             </motion.a>
-
-// //                         </div>
-
-// //                     </motion.div>
-
-// //                 )}
-
-// //             </AnimatePresence>
-
-// //         </>
-
-// //     );
-
-// // };
-
-
-// // export default Navbar;
-
-
-
-
-// import { useEffect, useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import {
-//     Menu,
-//     X,
-//     ArrowUpRight
-// } from "lucide-react";
-
-// import {
-//     Link,
-//     useLocation,
-//     useNavigate,
-// } from "react-router-dom";
-
-// import logo from "../../assets/logos/salem-biotech-logo.png";
-
-// import "./Navbar.css";
-
-
-// const navLinks = [
-//     {
-//         label: "Home",
-//         to: "/",
-//     },
-//     {
-//         label: "Products",
-//         section: "products",
-//     },
-//     {
-//         label: "Contact",
-//         section: "contact",
-//     },
-// ];
-
-// const Navbar = () => {
-
-//     const navigate = useNavigate();
-//     const location = useLocation();
-//     const [scrolled, setScrolled] = useState(false);
-//     const [menuOpen, setMenuOpen] = useState(false);
-
-
-//     useEffect(() => {
-
-//         const handleScroll = () => {
-
-//             setScrolled(window.scrollY > 40);
-
-//         };
-
-
-//         window.addEventListener(
-//             "scroll",
-//             handleScroll
-//         );
-
-
-//         return () => {
-
-//             window.removeEventListener(
-//                 "scroll",
-//                 handleScroll
-//             );
-
-//         };
-
-//     }, []);
-
-
-//     const handleLinkClick = () => {
-
-//         setMenuOpen(false);
-
-//     };
-
-
-//     const handleSectionClick = (section) => {
-
-//         setMenuOpen(false);
-
-
-//         // If already on homepage,
-//         // directly scroll to the section.
-//         if (location.pathname === "/") {
-
-//             const element =
-//                 document.getElementById(section);
-
-//             if (element) {
-
-//                 element.scrollIntoView({
-//                     behavior: "smooth",
-//                     block: "start",
-//                 });
-
-//             }
-
-//             return;
-//         }
-
-
-//         // If on another page,
-//         // navigate back to homepage first.
-//         navigate(`/#${section}`);
-
-//     };
-
-
-//     return (
-
-//         <>
-
-//             <motion.header
-//                 className={`navbar ${scrolled ? "navbar-scrolled" : ""
-//                     }`}
-//                 initial={{
-//                     y: -100,
-//                     opacity: 0,
-//                 }}
-//                 animate={{
-//                     y: 0,
-//                     opacity: 1,
-//                 }}
-//                 transition={{
-//                     duration: 0.7,
-//                     ease: [0.22, 1, 0.36, 1],
-//                 }}
-//             >
-
-//                 <div className="navbar-inner">
-
-
-//                     {/* Logo */}
-
-//                     <Link
-//                         to="/"
-//                         className="navbar-logo"
-//                         onClick={handleLinkClick}
-//                     >
-
-//                         <img
-//                             src={logo}
-//                             alt="Salem Biotech Service"
-//                         />
-
-//                     </Link>
-
-
-
-//                     {/* Desktop Navigation */}
-
-//                     <nav className="navbar-links">
-
-//                         {navLinks.map(
-//                             (link, index) => (
-
-//                                 <motion.div
-//                                     key={link.label}
-//                                     initial={{
-//                                         opacity: 0,
-//                                         y: -10,
-//                                     }}
-//                                     animate={{
-//                                         opacity: 1,
-//                                         y: 0,
-//                                     }}
-//                                     transition={{
-//                                         delay:
-//                                             0.15 +
-//                                             index * 0.08,
-//                                         duration: 0.45,
-//                                     }}
-//                                 >
-
-//                                     {/* <Link
-//                                         to={link.to}
-//                                         className="navbar-link"
-//                                         onClick={handleLinkClick}
-//                                     >
-
-//                                         <span>
-//                                             {link.label}
-//                                         </span>
-
-//                                         <span className="navbar-link-line" />
-
-//                                     </Link> */}
-
-
-//                                     {link.section ? (
-
-//                                         <a
-//                                             href={`/#${link.section}`}
-//                                             className="navbar-link"
-//                                             onClick={(event) => {
-
-//                                                 event.preventDefault();
-
-//                                                 handleSectionClick(
-//                                                     link.section
-//                                                 );
-
-//                                             }}
-//                                         >
-
-//                                             <span>
-//                                                 {link.label}
-//                                             </span>
-
-//                                             <span className="navbar-link-line" />
-
-//                                         </a>
-
-//                                     ) : (
-
-//                                         <Link
-//                                             to={link.to}
-//                                             className="navbar-link"
-//                                             onClick={handleLinkClick}
-//                                         >
-
-//                                             <span>
-//                                                 {link.label}
-//                                             </span>
-
-//                                             <span className="navbar-link-line" />
-
-//                                         </Link>
-
-//                                     )}
-//                                 </motion.div>
-
-//                             )
-//                         )}
-
-//                     </nav>
-
-
-
-//                     {/* CTA */}
-
-//                     <motion.div
-//                         whileHover={{
-//                             scale: 1.03,
-//                         }}
-//                         whileTap={{
-//                             scale: 0.97,
-//                         }}
-//                     >
-
-//                         <Link
-//                             to="/#contact"
-//                             className="navbar-cta"
-//                             onClick={handleLinkClick}
-//                         >
-
-//                             <span>
-//                                 Enquire Now
-//                             </span>
-
-//                             <ArrowUpRight
-//                                 size={17}
-//                                 strokeWidth={2}
-//                             />
-
-//                         </Link>
-
-//                     </motion.div>
-
-
-
-//                     {/* Mobile Menu Button */}
-
-//                     <button
-//                         type="button"
-//                         className="navbar-menu-button"
-//                         aria-label={
-//                             menuOpen
-//                                 ? "Close menu"
-//                                 : "Open menu"
-//                         }
-//                         aria-expanded={menuOpen}
-//                         onClick={() =>
-//                             setMenuOpen(
-//                                 !menuOpen
-//                             )
-//                         }
-//                     >
-
-//                         {menuOpen ? (
-//                             <X size={24} />
-//                         ) : (
-//                             <Menu size={24} />
-//                         )}
-
-//                     </button>
-
-//                 </div>
-
-//             </motion.header>
-
-
-
-//             {/* Mobile Menu */}
-
-//             <AnimatePresence>
-
-//                 {menuOpen && (
-
-//                     <motion.div
-//                         className="mobile-menu"
-//                         initial={{
-//                             opacity: 0,
-//                             y: -20,
-//                         }}
-//                         animate={{
-//                             opacity: 1,
-//                             y: 0,
-//                         }}
-//                         exit={{
-//                             opacity: 0,
-//                             y: -20,
-//                         }}
-//                         transition={{
-//                             duration: 0.35,
-//                             ease: [0.22, 1, 0.36, 1],
-//                         }}
-//                     >
-
-//                         <div className="mobile-menu-content">
-
-//                             {navLinks.map(
-//                                 (link, index) => (
-
-//                                     <motion.div
-//                                         key={link.label}
-//                                         initial={{
-//                                             opacity: 0,
-//                                             x: -20,
-//                                         }}
-//                                         animate={{
-//                                             opacity: 1,
-//                                             x: 0,
-//                                         }}
-//                                         transition={{
-//                                             delay:
-//                                                 index *
-//                                                 0.07,
-//                                         }}
-//                                     >
-
-//                                         <Link
-//                                             to={link.to}
-//                                             className="mobile-menu-link"
-//                                             onClick={
-//                                                 handleLinkClick
-//                                             }
-//                                         >
-
-//                                             <span>
-//                                                 {link.label}
-//                                             </span>
-
-//                                             <ArrowUpRight
-//                                                 size={20}
-//                                             />
-
-//                                         </Link>
-
-//                                     </motion.div>
-
-//                                 )
-//                             )}
-
-
-//                             <motion.div
-//                                 initial={{
-//                                     opacity: 0,
-//                                     y: 15,
-//                                 }}
-//                                 animate={{
-//                                     opacity: 1,
-//                                     y: 0,
-//                                 }}
-//                                 transition={{
-//                                     delay: 0.25,
-//                                 }}
-//                             >
-
-//                                 <Link
-//                                     to="/#contact"
-//                                     className="mobile-menu-cta"
-//                                     onClick={
-//                                         handleLinkClick
-//                                     }
-//                                 >
-
-//                                     Enquire Now
-
-//                                     <ArrowUpRight
-//                                         size={19}
-//                                     />
-
-//                                 </Link>
-
-//                             </motion.div>
-
-//                         </div>
-
-//                     </motion.div>
-
-//                 )}
-
-//             </AnimatePresence>
-
-//         </>
-
-//     );
-
-// };
-
-
-// export default Navbar;
 
 
 import { useEffect, useState } from "react";
@@ -766,26 +24,43 @@ import {
     useNavigate
 } from "react-router-dom";
 
-import logo from "../../assets/logos/salem-biotech-logo.png";
+import logo from "../../assets/logos/sbs-logo.png";
 
 import "./Navbar.css";
 
 
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
 const navLinks = [
+
     {
         label: "Home",
         section: "home",
     },
+
+    {
+        label: "Certificates",
+        section: "certificates",
+    },
+
     {
         label: "Products",
         section: "products",
     },
+
     {
         label: "Contact",
         section: "contact",
     },
+
 ];
 
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 const Navbar = () => {
 
@@ -793,21 +68,22 @@ const Navbar = () => {
 
     const location = useLocation();
 
+
     const [scrolled, setScrolled] =
         useState(false);
 
+
     const [menuOpen, setMenuOpen] =
         useState(false);
+
 
     const [activeSection, setActiveSection] =
         useState("home");
 
 
-    /*
-    ----------------------------------------
-    SCROLL STATE
-    ----------------------------------------
-    */
+    /* =====================================================
+       SCROLL STATE
+    ===================================================== */
 
     useEffect(() => {
 
@@ -842,17 +118,15 @@ const Navbar = () => {
     }, []);
 
 
-    /*
-    ----------------------------------------
-    DETERMINE ACTIVE PAGE / SECTION
-    ----------------------------------------
-    */
+    /* =====================================================
+       DETERMINE ACTIVE PAGE / SECTION
+    ===================================================== */
 
     useEffect(() => {
 
-        /*
-        Product detail pages
-        */
+        /* =================================================
+           PRODUCT DETAIL PAGES
+        ================================================= */
 
         if (
             location.pathname.startsWith(
@@ -869,9 +143,9 @@ const Navbar = () => {
         }
 
 
-        /*
-        Products listing page
-        */
+        /* =================================================
+           PRODUCTS LISTING PAGE
+        ================================================= */
 
         if (
             location.pathname ===
@@ -887,39 +161,42 @@ const Navbar = () => {
         }
 
 
-        /*
-        Any other page
-        */
+        /* =================================================
+           OTHER PAGES
+        ================================================= */
 
         if (
             location.pathname !== "/"
         ) {
 
-            setActiveSection(
-                ""
-            );
+            setActiveSection("");
 
             return;
 
         }
 
 
-        /*
-        Homepage section detection
-        */
+        /* =================================================
+           HOMEPAGE SECTION DETECTION
+        ================================================= */
 
         const sections = [
+
             "home",
+
+            "certificates",
+
             "products",
+
             "contact",
+
         ];
 
 
         const handleScroll = () => {
 
             const scrollPosition =
-                window.scrollY +
-                180;
+                window.scrollY + 180;
 
 
             let currentSection =
@@ -958,13 +235,12 @@ const Navbar = () => {
             );
 
 
-            /*
-            At the very top always show Home
-            */
+            /* =============================================
+               AT THE VERY TOP
+            ============================================== */
 
             if (
-                window.scrollY <
-                100
+                window.scrollY < 100
             ) {
 
                 currentSection =
@@ -1002,11 +278,9 @@ const Navbar = () => {
     }, [location.pathname]);
 
 
-    /*
-    ----------------------------------------
-    CLOSE MOBILE MENU
-    ----------------------------------------
-    */
+    /* =====================================================
+       CLOSE MOBILE MENU
+    ===================================================== */
 
     const handleLinkClick = () => {
 
@@ -1015,11 +289,9 @@ const Navbar = () => {
     };
 
 
-    /*
-    ----------------------------------------
-    SECTION NAVIGATION
-    ----------------------------------------
-    */
+    /* =====================================================
+       SECTION NAVIGATION
+    ===================================================== */
 
     const handleSectionClick = (
         section
@@ -1028,10 +300,9 @@ const Navbar = () => {
         setMenuOpen(false);
 
 
-        /*
-        If already on homepage,
-        scroll directly.
-        */
+        /* =================================================
+           ALREADY ON HOMEPAGE
+        ================================================= */
 
         if (
             location.pathname === "/"
@@ -1048,9 +319,9 @@ const Navbar = () => {
             }
 
 
-            /*
-            Update browser URL
-            */
+            /* =============================================
+               UPDATE URL
+            ============================================== */
 
             window.history.replaceState(
                 null,
@@ -1059,9 +330,9 @@ const Navbar = () => {
             );
 
 
-            /*
-            Scroll smoothly
-            */
+            /* =============================================
+               SMOOTH SCROLL
+            ============================================== */
 
             element.scrollIntoView({
                 behavior: "smooth",
@@ -1079,10 +350,11 @@ const Navbar = () => {
         }
 
 
-        /*
-        If on another page,
-        go to homepage + section.
-        */
+        /* =================================================
+           OTHER PAGE
+
+           Go to homepage + section.
+        ================================================= */
 
         navigate(
             `/#${section}`
@@ -1091,11 +363,9 @@ const Navbar = () => {
     };
 
 
-    /*
-    ----------------------------------------
-    HOME CLICK
-    ----------------------------------------
-    */
+    /* =====================================================
+       HOME CLICK
+    ===================================================== */
 
     const handleHomeClick = (
         event
@@ -1105,6 +375,10 @@ const Navbar = () => {
 
         setMenuOpen(false);
 
+
+        /* =================================================
+           ALREADY ON HOMEPAGE
+        ================================================= */
 
         if (
             location.pathname === "/"
@@ -1143,24 +417,26 @@ const Navbar = () => {
         }
 
 
+        /* =================================================
+           OTHER PAGE
+        ================================================= */
+
         navigate("/");
 
     };
 
 
-    /*
-    ----------------------------------------
-    RENDER
-    ----------------------------------------
-    */
+    /* =====================================================
+       RENDER
+    ===================================================== */
 
     return (
 
         <>
 
-            {/* =================================
+            {/* =================================================
                 NAVBAR
-            ================================= */}
+            ================================================= */}
 
             <motion.header
                 className={`navbar ${
@@ -1181,6 +457,7 @@ const Navbar = () => {
 
                 transition={{
                     duration: 0.7,
+
                     ease: [
                         0.22,
                         1,
@@ -1193,9 +470,9 @@ const Navbar = () => {
                 <div className="navbar-inner">
 
 
-                    {/* =========================
+                    {/* =================================================
                         LOGO
-                    ========================= */}
+                    ================================================= */}
 
                     <Link
                         to="/"
@@ -1213,12 +490,14 @@ const Navbar = () => {
                     </Link>
 
 
-
-                    {/* =========================
+                    {/* =================================================
                         DESKTOP NAVIGATION
-                    ========================= */}
+                    ================================================= */}
 
-                    <nav className="navbar-links">
+                    <nav
+                        className="navbar-links"
+                        aria-label="Main navigation"
+                    >
 
                         {navLinks.map(
                             (link, index) => {
@@ -1260,7 +539,9 @@ const Navbar = () => {
                                             href={
                                                 link.section ===
                                                 "home"
+
                                                     ? "/"
+
                                                     : `/#${link.section}`
                                             }
 
@@ -1273,6 +554,10 @@ const Navbar = () => {
                                             onClick={(
                                                 event
                                             ) => {
+
+                                                /* =================================
+                                                   HOME
+                                                ================================== */
 
                                                 if (
                                                     link.section ===
@@ -1287,6 +572,10 @@ const Navbar = () => {
 
                                                 }
 
+
+                                                /* =================================
+                                                   SECTION
+                                                ================================== */
 
                                                 event.preventDefault();
 
@@ -1321,17 +610,18 @@ const Navbar = () => {
                     </nav>
 
 
-
-                    {/* =========================
-                        CTA
-                    ========================= */}
+                    {/* =================================================
+                        DESKTOP CTA
+                    ================================================= */}
 
                     <motion.a
                         href="/#contact"
 
                         className="navbar-cta"
 
-                        onClick={(event) => {
+                        onClick={(
+                            event
+                        ) => {
 
                             event.preventDefault();
 
@@ -1354,18 +644,14 @@ const Navbar = () => {
                             Enquire Now
                         </span>
 
-                        <ArrowUpRight
-                            size={17}
-                            strokeWidth={2}
-                        />
+                   
 
                     </motion.a>
 
 
-
-                    {/* =========================
-                        MOBILE BUTTON
-                    ========================= */}
+                    {/* =================================================
+                        MOBILE MENU BUTTON
+                    ================================================= */}
 
                     <button
                         type="button"
@@ -1391,11 +677,15 @@ const Navbar = () => {
 
                         {menuOpen ? (
 
-                            <X size={24} />
+                            <X
+                                size={24}
+                            />
 
                         ) : (
 
-                            <Menu size={24} />
+                            <Menu
+                                size={24}
+                            />
 
                         )}
 
@@ -1406,10 +696,9 @@ const Navbar = () => {
             </motion.header>
 
 
-
-            {/* =================================
+            {/* =================================================
                 MOBILE MENU
-            ================================= */}
+            ================================================= */}
 
             <AnimatePresence>
 
@@ -1435,6 +724,7 @@ const Navbar = () => {
 
                         transition={{
                             duration: 0.35,
+
                             ease: [
                                 0.22,
                                 1,
@@ -1446,6 +736,10 @@ const Navbar = () => {
 
                         <div className="mobile-menu-content">
 
+
+                            {/* =================================================
+                                MOBILE LINKS
+                            ================================================= */}
 
                             {navLinks.map(
                                 (
@@ -1486,7 +780,9 @@ const Navbar = () => {
                                                 href={
                                                     link.section ===
                                                     "home"
+
                                                         ? "/"
+
                                                         : `/#${link.section}`
                                                 }
 
@@ -1499,6 +795,10 @@ const Navbar = () => {
                                                 onClick={(
                                                     event
                                                 ) => {
+
+                                                    /* =========================
+                                                       HOME
+                                                    ========================== */
 
                                                     if (
                                                         link.section ===
@@ -1513,6 +813,10 @@ const Navbar = () => {
 
                                                     }
 
+
+                                                    /* =========================
+                                                       SECTION
+                                                    ========================== */
 
                                                     event.preventDefault();
 
@@ -1544,10 +848,9 @@ const Navbar = () => {
                             )}
 
 
-
-                            {/* =====================
+                            {/* =================================================
                                 MOBILE CTA
-                            ===================== */}
+                            ================================================= */}
 
                             <motion.div
                                 initial={{
@@ -1585,9 +888,7 @@ const Navbar = () => {
 
                                     Enquire Now
 
-                                    <ArrowUpRight
-                                        size={19}
-                                    />
+                              
 
                                 </a>
 

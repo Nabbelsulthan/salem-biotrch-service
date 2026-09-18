@@ -1,4 +1,10 @@
+
+
+
+
+import { useState } from "react";
 import { motion } from "framer-motion";
+
 import {
     ArrowUpRight,
     Mail,
@@ -9,6 +15,10 @@ import {
 import "./Contact.css";
 
 
+/* =========================================================
+   ANIMATION
+========================================================= */
+
 const ease = [
     0.22,
     1,
@@ -17,62 +27,231 @@ const ease = [
 ];
 
 
-const handleSubmit = (event) => {
+const Contact = () => {
 
-    event.preventDefault();
+    /* =====================================================
+       FORM STATE
+    ===================================================== */
 
-    const formData =
-        new FormData(event.currentTarget);
-
-    const name =
-        formData.get("name")?.trim();
-
-    const phone =
-        formData.get("phone")?.trim();
-
-    const email =
-        formData.get("email")?.trim();
-
-    const product =
-        formData.get("product")?.trim();
-
-    const message =
-        formData.get("message")?.trim();
+    const [formData, setFormData] = useState({
+        name: "",
+        product: "",
+        message: "",
+    });
 
 
-    const whatsappMessage = `
+    const [errors, setErrors] = useState({});
+
+
+    /* =====================================================
+       HANDLE INPUT
+    ===================================================== */
+
+    const handleChange = (event) => {
+
+        const {
+            name,
+            value,
+        } = event.target;
+
+
+        setFormData((previous) => ({
+            ...previous,
+            [name]: value,
+        }));
+
+
+        /* Remove error while typing */
+
+        if (errors[name]) {
+
+            setErrors((previous) => ({
+                ...previous,
+                [name]: "",
+            }));
+
+        }
+
+    };
+
+
+    /* =====================================================
+       VALIDATION
+    ===================================================== */
+
+    const validateForm = () => {
+
+        const newErrors = {};
+
+
+        /* -----------------------------------------------
+           NAME
+        ------------------------------------------------ */
+
+        const name =
+            formData.name.trim();
+
+
+        if (!name) {
+
+            newErrors.name =
+                "Please enter your name.";
+
+        } else if (name.length < 2) {
+
+            newErrors.name =
+                "Name must contain at least 2 characters.";
+
+        } else if (name.length > 50) {
+
+            newErrors.name =
+                "Name must not exceed 50 characters.";
+
+        }
+
+
+        /* -----------------------------------------------
+           PRODUCT
+        ------------------------------------------------ */
+
+        if (!formData.product) {
+
+            newErrors.product =
+                "Please select a product or requirement.";
+
+        }
+
+
+        /* -----------------------------------------------
+           MESSAGE
+        ------------------------------------------------ */
+
+        const message =
+            formData.message.trim();
+
+
+        if (!message) {
+
+            newErrors.message =
+                "Please tell us about your requirement.";
+
+        } else if (message.length < 10) {
+
+            newErrors.message =
+                "Please provide a little more detail.";
+
+        } else if (message.length > 1000) {
+
+            newErrors.message =
+                "Message must not exceed 1000 characters.";
+
+        }
+
+
+        setErrors(newErrors);
+
+
+        return (
+            Object.keys(newErrors).length === 0
+        );
+
+    };
+
+
+    /* =====================================================
+       HANDLE SUBMIT
+    ===================================================== */
+
+    const handleSubmit = (event) => {
+
+        event.preventDefault();
+
+
+        /* -----------------------------------------------
+           VALIDATE
+        ------------------------------------------------ */
+
+        const isValid =
+            validateForm();
+
+
+        if (!isValid) {
+
+            return;
+
+        }
+
+
+        /* -----------------------------------------------
+           CLEAN VALUES
+        ------------------------------------------------ */
+
+        const name =
+            formData.name.trim();
+
+        const message =
+            formData.message.trim();
+
+
+        /* -----------------------------------------------
+           WHATSAPP MESSAGE
+        ------------------------------------------------ */
+
+        const whatsappMessage = `
 Hello Salem Biotech Service,
 
-I would like to make an enquiry.
+I would like to make an enquiry regarding your shrimp and aquaculture products.
 
-Name: ${name || "Not provided"}
+Name: ${name}
 
-Phone: ${phone || "Not provided"}
-
-Email: ${email || "Not provided"}
-
-Product / Requirement: ${product || "Not specified"}
+Product / Requirement: ${formData.product}
 
 Message:
-${message || "No message provided"}
-    `.trim();
+${message}
+
+Thank you.
+        `.trim();
 
 
-    const whatsappUrl =
-        `https://wa.me/916380701082?text=${encodeURIComponent(
-            whatsappMessage
-        )}`;
+        /* -----------------------------------------------
+           WHATSAPP URL
+        ------------------------------------------------ */
+
+        const whatsappUrl =
+            `https://wa.me/916380701082?text=${encodeURIComponent(
+                whatsappMessage
+            )}`;
 
 
-    window.open(
-        whatsappUrl,
-        "_blank",
-        "noopener,noreferrer"
-    );
+        /* -----------------------------------------------
+           OPEN WHATSAPP
+        ------------------------------------------------ */
 
-};
+        window.open(
+            whatsappUrl,
+            "_blank",
+            "noopener,noreferrer"
+        );
 
-const Contact = () => {
+
+        /* -----------------------------------------------
+           RESET FORM
+        ------------------------------------------------ */
+
+        setFormData({
+            name: "",
+            product: "",
+            message: "",
+        });
+
+        setErrors({});
+
+    };
+
+
+    /* =====================================================
+       RENDER
+    ===================================================== */
 
     return (
 
@@ -84,85 +263,113 @@ const Contact = () => {
             <div className="contact-container">
 
 
-                {/* =========================================
+                {/* =================================================
                     LEFT CONTENT
-                ========================================= */}
+                ================================================= */}
 
                 <div className="contact-content">
 
 
+                    {/* ---------------------------------------------
+                        SECTION KICKER
+                    ---------------------------------------------- */}
+
                     <motion.div
                         className="contact-kicker"
+
                         initial={{
                             opacity: 0,
                             x: -25,
                         }}
+
                         whileInView={{
                             opacity: 1,
                             x: 0,
                         }}
+
                         viewport={{
                             once: false,
                             amount: 0.3,
                         }}
+
                         transition={{
                             duration: 0.7,
                             ease,
                         }}
                     >
 
-                        <span>04</span>
+                        <span>
+                            04
+                        </span>
 
                         <i />
 
-                        <span>GET IN TOUCH</span>
+                        <span>
+                            GET IN TOUCH
+                        </span>
 
                     </motion.div>
 
 
+                    {/* ---------------------------------------------
+                        HEADING
+                    ---------------------------------------------- */}
+
                     <motion.h2
+
                         initial={{
                             opacity: 0,
                             y: 55,
                         }}
+
                         whileInView={{
                             opacity: 1,
                             y: 0,
                         }}
+
                         viewport={{
                             once: false,
                             amount: 0.3,
                         }}
+
                         transition={{
                             duration: 0.95,
                             ease,
                         }}
                     >
 
-                        Let's build
+                        Let's grow
                         <br />
 
                         <span>
-                            better ponds.
+                            better shrimp.
                         </span>
 
                     </motion.h2>
 
 
+                    {/* ---------------------------------------------
+                        DESCRIPTION
+                    ---------------------------------------------- */}
+
                     <motion.p
                         className="contact-description"
+
                         initial={{
                             opacity: 0,
                             y: 25,
                         }}
+
                         whileInView={{
                             opacity: 1,
                             y: 0,
                         }}
+
                         viewport={{
                             once: false,
                             amount: 0.3,
                         }}
+
                         transition={{
                             duration: 0.8,
                             delay: 0.15,
@@ -170,34 +377,44 @@ const Contact = () => {
                         }}
                     >
 
-                        Have a question about our products
-                        or aquaculture solutions? Get in touch
-                        with Salem Biotech Service.
+                        Have a question about our shrimp
+                        health products or aquaculture
+                        solutions? Tell us what you need
+                        and our team will get in touch.
 
                     </motion.p>
 
 
-
-                    {/* CONTACT DETAILS */}
+                    {/* =================================================
+                        CONTACT DETAILS
+                    ================================================= */}
 
                     <div className="contact-details">
 
 
+                        {/* ---------------------------------------------
+                            PHONE
+                        ---------------------------------------------- */}
+
                         <motion.a
                             href="tel:+916380701082"
                             className="contact-detail"
+
                             initial={{
                                 opacity: 0,
                                 y: 25,
                             }}
+
                             whileInView={{
                                 opacity: 1,
                                 y: 0,
                             }}
+
                             viewport={{
                                 once: false,
                                 amount: 0.25,
                             }}
+
                             transition={{
                                 duration: 0.7,
                                 delay: 0.1,
@@ -211,6 +428,7 @@ const Contact = () => {
 
                             </div>
 
+
                             <div>
 
                                 <span>
@@ -218,7 +436,7 @@ const Contact = () => {
                                 </span>
 
                                 <strong>
-                                    +91 63 80 70 10 82
+                                    +91 6380701082
                                 </strong>
 
                             </div>
@@ -226,22 +444,29 @@ const Contact = () => {
                         </motion.a>
 
 
+                        {/* ---------------------------------------------
+                            EMAIL
+                        ---------------------------------------------- */}
 
                         <motion.a
                             href="mailto:salembiotechservices@gmail.com"
                             className="contact-detail"
+
                             initial={{
                                 opacity: 0,
                                 y: 25,
                             }}
+
                             whileInView={{
                                 opacity: 1,
                                 y: 0,
                             }}
+
                             viewport={{
                                 once: false,
                                 amount: 0.25,
                             }}
+
                             transition={{
                                 duration: 0.7,
                                 delay: 0.18,
@@ -254,6 +479,7 @@ const Contact = () => {
                                 <Mail size={19} />
 
                             </div>
+
 
                             <div>
 
@@ -270,21 +496,28 @@ const Contact = () => {
                         </motion.a>
 
 
+                        {/* ---------------------------------------------
+                            ADDRESS
+                        ---------------------------------------------- */}
 
                         <motion.div
                             className="contact-detail"
+
                             initial={{
                                 opacity: 0,
                                 y: 25,
                             }}
+
                             whileInView={{
                                 opacity: 1,
                                 y: 0,
                             }}
+
                             viewport={{
                                 once: false,
                                 amount: 0.25,
                             }}
+
                             transition={{
                                 duration: 0.7,
                                 delay: 0.26,
@@ -298,6 +531,7 @@ const Contact = () => {
 
                             </div>
 
+
                             <div>
 
                                 <span>
@@ -305,15 +539,22 @@ const Contact = () => {
                                 </span>
 
                                 <strong>
+
                                     No.99, Amudhavalli Illam,
                                     <br />
+
                                     Varna Theertham Extension,
                                     <br />
+
                                     Murugan Kovil Street,
                                     <br />
-                                    Harur Taluk, Dharmapuri Dist,
+
+                                    Harur Taluk,
+                                    Dharmapuri Dist,
                                     <br />
+
                                     Tamilnadu 636903
+
                                 </strong>
 
                             </div>
@@ -326,30 +567,38 @@ const Contact = () => {
                 </div>
 
 
-
-                {/* =========================================
+                {/* =================================================
                     ENQUIRY FORM
-                ========================================= */}
+                ================================================= */}
 
                 <motion.div
                     className="contact-form-wrapper"
+
                     initial={{
                         opacity: 0,
                         y: 50,
                     }}
+
                     whileInView={{
                         opacity: 1,
                         y: 0,
                     }}
+
                     viewport={{
                         once: false,
                         amount: 0.2,
                     }}
+
                     transition={{
                         duration: 0.9,
                         ease,
                     }}
                 >
+
+
+                    {/* ---------------------------------------------
+                        FORM HEADER
+                    ---------------------------------------------- */}
 
                     <div className="contact-form-header">
 
@@ -358,149 +607,208 @@ const Contact = () => {
                         </span>
 
                         <h3>
+
                             Tell us what
                             <br />
-                            you need.
+
+                            <span>
+                                you need.
+                            </span>
+
                         </h3>
 
                     </div>
 
 
-                    <form
+                    {/* =================================================
+                        FORM
+                    ================================================= */}
 
+                    <form
                         className="contact-form"
                         onSubmit={handleSubmit}
-
-
+                        noValidate
                     >
 
-                        <div className="contact-form-row">
 
-                            <div className="contact-field">
-
-                                <label>
-                                    YOUR NAME
-                                </label>
-
-                                <input
-                                    type="text"
-                                    placeholder="Enter your name"
-                                />
-
-                            </div>
-
-
-                            <div className="contact-field">
-
-                                <label>
-                                    PHONE NUMBER
-                                </label>
-
-                                <input
-                                    type="tel"
-                                    placeholder="Enter your phone number"
-                                />
-
-                            </div>
-
-                        </div>
-
-
+                        {/* ---------------------------------------------
+                            NAME
+                        ---------------------------------------------- */}
 
                         <div className="contact-field">
 
-                            <label>
-                                EMAIL ADDRESS
+                            <label htmlFor="name">
+                                YOUR NAME
                             </label>
 
                             <input
-                                type="email"
-                                placeholder="Enter your email"
+                                id="name"
+                                name="name"
+                                type="text"
+                                value={formData.name}
+                                onChange={handleChange}
+                                placeholder="Enter your name"
+                                maxLength={50}
+                                autoComplete="name"
+                                aria-invalid={
+                                    Boolean(errors.name)
+                                }
                             />
+
+
+                            {errors.name && (
+
+                                <small className="contact-error">
+                                    {errors.name}
+                                </small>
+
+                            )}
 
                         </div>
 
 
+                        {/* ---------------------------------------------
+                            PRODUCT / REQUIREMENT
+                        ---------------------------------------------- */}
 
                         <div className="contact-field">
 
-                            <label>
+                            <label htmlFor="product">
                                 PRODUCT / REQUIREMENT
                             </label>
 
-                            <select defaultValue="">
+                            <select
+                                id="product"
+                                name="product"
+                                value={formData.product}
+                                onChange={handleChange}
+                                aria-invalid={
+                                    Boolean(errors.product)
+                                }
+                            >
 
                                 <option
                                     value=""
                                     disabled
                                 >
-                                    Select a product
+                                    Select a product or requirement
                                 </option>
 
-                                <option value="grow-meg">
+
+                                <option value="Grow Meg">
                                     Grow Meg
                                 </option>
 
-                                <option value="grow-c">
+                                <option value="Grow C">
                                     Grow C
                                 </option>
 
-                                <option value="oxy-fresh">
+                                <option value="Oxy Fresh">
                                     Oxy Fresh
                                 </option>
 
-                                <option value="softmax">
+                                <option value="SoftMAX">
                                     SoftMAX
                                 </option>
 
-                                <option value="biocide">
+                                <option value="Biocide">
                                     Biocide
                                 </option>
 
-                                <option value="ammocure">
+                                <option value="AmmoCure">
                                     AmmoCure
                                 </option>
 
-                                <option value="zooclear">
+                                <option value="ZOO Clear">
                                     ZOO Clear
                                 </option>
 
-                                <option value="prolife">
+                                <option value="PROLife">
                                     PROLife
                                 </option>
 
-                                <option value="hercules-tc">
+                                <option value="Hercules TC">
                                     Hercules TC
                                 </option>
 
-                                <option value="zoogill">
+                                <option value="ZOO Gill">
                                     ZOO Gill
                                 </option>
 
-                                <option value="heptogut">
+                                <option value="Hepto Gut">
                                     Hepto Gut
+                                </option>
+
+                                <option value="General Aquaculture Enquiry">
+                                    General Aquaculture Enquiry
+                                </option>
+
+                                <option value="Other">
+                                    Other
                                 </option>
 
                             </select>
 
+
+                            {errors.product && (
+
+                                <small className="contact-error">
+                                    {errors.product}
+                                </small>
+
+                            )}
+
                         </div>
 
 
+                        {/* ---------------------------------------------
+                            MESSAGE
+                        ---------------------------------------------- */}
 
                         <div className="contact-field">
 
-                            <label>
-                                MESSAGE
+                            <label htmlFor="message">
+                                YOUR REQUIREMENT
                             </label>
 
                             <textarea
-                                rows="4"
-                                placeholder="Tell us about your requirement..."
+                                id="message"
+                                name="message"
+                                rows="5"
+                                value={formData.message}
+                                onChange={handleChange}
+                                placeholder="Tell us about your shrimp farming requirement..."
+                                maxLength={1000}
+                                aria-invalid={
+                                    Boolean(errors.message)
+                                }
                             />
+
+
+                            <div className="contact-message-meta">
+
+                                <span>
+
+                                    {errors.message && (
+                                        <small className="contact-error">
+                                            {errors.message}
+                                        </small>
+                                    )}
+
+                                </span>
+
+                                {/* <span>
+                                    {formData.message.length}/1000
+                                </span> */}
+
+                            </div>
 
                         </div>
 
 
+                        {/* ---------------------------------------------
+                            SUBMIT
+                        ---------------------------------------------- */}
 
                         <button
                             type="submit"
@@ -511,11 +819,9 @@ const Contact = () => {
                                 SEND ENQUIRY
                             </span>
 
-                            <ArrowUpRight
-                                size={19}
-                            />
 
                         </button>
+
 
                     </form>
 

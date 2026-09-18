@@ -6,7 +6,7 @@ import {
     Phone,
 } from "lucide-react";
 
-import logo from "../../assets/logos/salem-biotech-logo.png";
+import logo from "../../assets/logos/sbs-logo.png";
 
 import "./Footer.css";
 
@@ -94,6 +94,10 @@ const Footer = () => {
                             Home
                         </a>
 
+                            <a href="/#certificates">
+                            Certificates
+                        </a>
+
                         <a href="/#products">
                             Products
                         </a>
@@ -120,7 +124,7 @@ const Footer = () => {
                             <Phone size={15} />
 
                             <span>
-                                +91 63 80 70 10 82
+                                +91 6380701082
                             </span>
 
                         </a>

@@ -1,6 +1,6 @@
-/* =========================================
+/* =========================================================
    NAVBAR
-========================================= */
+========================================================= */
 
 .navbar {
     position: fixed;
@@ -19,9 +19,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    NAVBAR INNER
-========================================= */
+========================================================= */
 
 .navbar-inner {
     position: relative;
@@ -77,9 +77,9 @@
 }
 
 
-/*
-   Subtle aqua highlight along the top.
-*/
+/* =========================================================
+   TOP AQUA HIGHLIGHT
+========================================================= */
 
 .navbar-inner::before {
     content: "";
@@ -92,7 +92,8 @@
     width: 72%;
     height: 1px;
 
-    border-radius: var(--radius-pill);
+    border-radius:
+        var(--radius-pill);
 
     background:
         linear-gradient(
@@ -106,9 +107,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    SCROLLED STATE
-========================================= */
+========================================================= */
 
 .navbar-scrolled {
     top: 12px;
@@ -135,9 +136,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    LOGO
-========================================= */
+========================================================= */
 
 .navbar-logo {
     position: relative;
@@ -170,7 +171,8 @@
 
 
 .navbar-logo:hover img {
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
 
@@ -179,9 +181,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    DESKTOP NAVIGATION
-========================================= */
+========================================================= */
 
 .navbar-links {
     display: flex;
@@ -194,9 +196,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    NAV LINK
-========================================= */
+========================================================= */
 
 .navbar-link {
     position: relative;
@@ -209,8 +211,7 @@
 
     height: 78px;
 
-    color:
-        var(--color-text);
+    color: var(--color-text);
 
     text-decoration: none;
 
@@ -234,9 +235,9 @@
 }
 
 
-/* =========================================
-   LINK HOVER
-========================================= */
+/* =========================================================
+   NAV LINK DOT
+========================================================= */
 
 .navbar-link::before {
     content: "";
@@ -268,6 +269,10 @@
 }
 
 
+/* =========================================================
+   NAV LINK UNDERLINE
+========================================================= */
+
 .navbar-link-line {
     position: absolute;
 
@@ -275,7 +280,7 @@
 
     bottom: 16px;
 
-    width: 30px;
+    width: 0;
     height: 2px;
 
     border-radius:
@@ -288,18 +293,20 @@
             var(--color-cyan)
         );
 
-    transform:
-        translateX(-50%)
-        scaleX(0);
+    opacity: 0;
 
-    transform-origin:
-        center;
+    transform:
+        translateX(-50%);
 
     transition:
-        transform 0.4s
-        var(--transition-smooth);
+        width 0.35s var(--transition-smooth),
+        opacity 0.3s ease;
 }
 
+
+/* =========================================================
+   HOVER
+========================================================= */
 
 .navbar-link:hover {
     color:
@@ -309,9 +316,9 @@
 
 .navbar-link:hover
 .navbar-link-line {
-    transform:
-        translateX(-50%)
-        scaleX(1);
+    width: 100%;
+
+    opacity: 1;
 }
 
 
@@ -325,9 +332,37 @@
 }
 
 
-/* =========================================
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+.navbar-link-active {
+    color:
+        var(--color-primary);
+}
+
+
+.navbar-link-active
+.navbar-link-line {
+    width: 100%;
+
+    opacity: 1;
+}
+
+
+.navbar-link-active::before {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
    CTA
-========================================= */
+========================================================= */
 
 .navbar-cta {
     position: relative;
@@ -351,14 +386,10 @@
         var(--color-white);
 
     background:
-        linear-gradient(
-            135deg,
-            #045d7d 0%,
-            #087ea4 48%,
-            #08a9d2 100%
-        );
+        var(--gradient-primary);
 
-    border: 1px solid
+    border:
+        1px solid
         rgba(255, 255, 255, 0.18);
 
     border-radius:
@@ -385,14 +416,13 @@
 
     transition:
         box-shadow 0.35s ease,
-        transform 0.35s
-        var(--transition-smooth);
+        transform 0.35s var(--transition-smooth);
 }
 
 
-/*
-   Animated light sweep.
-*/
+/* =========================================================
+   CTA LIGHT SWEEP
+========================================================= */
 
 .navbar-cta::before {
     content: "";
@@ -418,8 +448,7 @@
         skewX(-20deg);
 
     transition:
-        left 0.7s
-        var(--transition-smooth);
+        left 0.7s var(--transition-smooth);
 }
 
 
@@ -438,14 +467,13 @@
 }
 
 
-/* =========================================
+/* =========================================================
    CTA ARROW
-========================================= */
+========================================================= */
 
 .navbar-cta svg {
     transition:
-        transform 0.35s
-        var(--transition-smooth);
+        transform 0.35s var(--transition-smooth);
 }
 
 
@@ -455,9 +483,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE MENU BUTTON
-========================================= */
+========================================================= */
 
 .navbar-menu-button {
     display: none;
@@ -477,7 +505,8 @@
     background:
         rgba(255, 255, 255, 0.68);
 
-    border: 1px solid
+    border:
+        1px solid
         rgba(8, 126, 164, 0.13);
 
     border-radius:
@@ -506,13 +535,14 @@
 
 
 .navbar-menu-button:active {
-    transform: scale(0.94);
+    transform:
+        scale(0.94);
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE MENU
-========================================= */
+========================================================= */
 
 .mobile-menu {
     position: fixed;
@@ -554,9 +584,9 @@
 }
 
 
-/*
-   Mobile menu aqua accent.
-*/
+/* =========================================================
+   MOBILE MENU ACCENT
+========================================================= */
 
 .mobile-menu::before {
     content: "";
@@ -564,6 +594,7 @@
     position: absolute;
 
     top: 0;
+
     left: 15%;
     right: 15%;
 
@@ -588,9 +619,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE LINKS
-========================================= */
+========================================================= */
 
 .mobile-menu-link {
     display: flex;
@@ -619,8 +650,7 @@
     transition:
         color 0.25s ease,
         background 0.25s ease,
-        padding 0.3s
-        var(--transition-smooth);
+        padding 0.3s var(--transition-smooth);
 }
 
 
@@ -643,8 +673,7 @@
 
     transition:
         opacity 0.25s ease,
-        transform 0.3s
-        var(--transition-smooth);
+        transform 0.3s var(--transition-smooth);
 }
 
 
@@ -656,9 +685,30 @@
 }
 
 
-/* =========================================
+/* =========================================================
+   MOBILE ACTIVE
+========================================================= */
+
+.mobile-menu-link-active {
+    color:
+        var(--color-primary);
+
+    background:
+        rgba(8, 169, 210, 0.07);
+}
+
+
+.mobile-menu-link-active svg {
+    color:
+        var(--color-primary);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
    MOBILE CTA
-========================================= */
+========================================================= */
 
 .mobile-menu-cta {
     position: relative;
@@ -700,8 +750,7 @@
 
 .mobile-menu-cta svg {
     transition:
-        transform 0.3s
-        var(--transition-smooth);
+        transform 0.3s var(--transition-smooth);
 }
 
 
@@ -711,15 +760,16 @@
 }
 
 
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 1024px) {
 
     .navbar-links {
         gap: 28px;
     }
+
 
     .navbar-inner {
         padding-left: 20px;
@@ -728,9 +778,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 900px) {
 
@@ -795,9 +845,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 480px) {
 
@@ -813,8 +863,7 @@
 
         padding-left: 14px;
 
-        border-radius:
-            17px;
+        border-radius: 17px;
     }
 
 
@@ -861,9 +910,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    REDUCED MOTION
-========================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -883,77 +932,4 @@
         transition: none;
     }
 
-}
-
-
-
-/* =========================================
-   ACTIVE NAVIGATION
-========================================= */
-
-.navbar-link {
-    position: relative;
-}
-
-
-/*
-   Active text
-*/
-
-.navbar-link-active {
-    color: #65d8ed;
-}
-
-
-/*
-   Active underline
-*/
-
-.navbar-link-active .navbar-link-line {
-    width: 100%;
-    opacity: 1;
-}
-
-
-/*
-   Normal underline
-*/
-
-.navbar-link-line {
-    width: 0;
-    opacity: 0;
-    transition:
-        width 0.3s ease,
-        opacity 0.3s ease;
-}
-
-
-/*
-   Hover
-*/
-
-.navbar-link:hover .navbar-link-line {
-    width: 100%;
-    opacity: 1;
-}
-
-
-/* =========================================
-   MOBILE ACTIVE STATE
-========================================= */
-
-.mobile-menu-link {
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-.mobile-menu-link-active {
-    color: #65d8ed;
-}
-
-
-.mobile-menu-link-active svg {
-    color: #65d8ed;
 }
