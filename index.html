@@ -1,13 +1,277 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>salem-biotec</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+
+  <!-- =====================================================
+       BASIC DOCUMENT
+       ===================================================== -->
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="theme-color"
+    content="#062f45"
+  />
+
+  <title>
+    Salem Biotech Service | Aquaculture Products & Solutions
+  </title>
+
+
+  <!-- =====================================================
+       REACT / VITE REFRESH PREAMBLE
+       IMPORTANT — KEEP
+       ===================================================== -->
+
+  <script type="module">
+
+    import RefreshRuntime from "/@react-refresh";
+
+    RefreshRuntime.injectIntoGlobalHook(window);
+
+    window.$RefreshReg$ = () => {};
+
+    window.$RefreshSig$ = (type) => (type);
+
+    window.__vite_plugin_react_preamble_installed__ = true;
+
+  </script>
+
+
+  <!-- =====================================================
+       FAVICON
+       ===================================================== -->
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/favicon.svg?v=2"
+  />
+
+
+  <!-- =====================================================
+       PRIMARY SEO
+       ===================================================== -->
+
+  <meta
+    name="description"
+    content="Salem Biotech Service provides aquaculture products and solutions including probiotics, feed additives, chemicals and antibiotic-free aquaculture inputs for shrimp and fish farming."
+  />
+
+  <meta
+    name="keywords"
+    content="Salem Biotech Service, aquaculture products, aquaculture solutions, shrimp farming products, shrimp aquaculture, shrimp probiotics, probiotics, feed additives, aquaculture inputs, aquaculture chemicals, fish farming products"
+  />
+
+  <meta
+    name="author"
+    content="Salem Biotech Service"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
+
+  <meta
+    name="googlebot"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
+
+
+  <!-- =====================================================
+       OPEN GRAPH
+       WHATSAPP / FACEBOOK / INSTAGRAM SHARING
+       ===================================================== -->
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:site_name"
+    content="Salem Biotech Service"
+  />
+
+  <meta
+    property="og:title"
+    content="Salem Biotech Service | Aquaculture Products & Solutions"
+  />
+
+  <meta
+    property="og:description"
+    content="Aquaculture products and solutions including probiotics, feed additives, chemicals and antibiotic-free aquaculture inputs for shrimp and fish farming."
+  />
+
+  <meta
+    property="og:locale"
+    content="en_IN"
+  />
+
+  <!--
+    IMPORTANT:
+    After getting the domain, change this to:
+
+    https://yourdomain.com/
+
+    Do NOT use localhost for production sharing.
+  -->
+
+  <!--
+  <meta
+    property="og:url"
+    content="https://yourdomain.com/"
+  />
+  -->
+
+
+  <!-- =====================================================
+       SOCIAL SHARE IMAGE
+       =====================================================
+
+       Create:
+
+       public/og-image.jpg
+
+       Recommended size:
+
+       1200 × 630 px
+
+       This image should contain the current
+       Salem Biotech Service logo and branding.
+       ===================================================== -->
+
+  <!--
+  <meta
+    property="og:image"
+    content="https://yourdomain.com/og-image.jpg"
+  />
+
+  <meta
+    property="og:image:secure_url"
+    content="https://yourdomain.com/og-image.jpg"
+  />
+
+  <meta
+    property="og:image:type"
+    content="image/jpeg"
+  />
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  />
+
+  <meta
+    property="og:image:height"
+    content="630"
+  />
+
+  <meta
+    property="og:image:alt"
+    content="Salem Biotech Service — Aquaculture Products & Solutions"
+  />
+  -->
+
+
+  <!-- =====================================================
+       X / TWITTER
+       ===================================================== -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Salem Biotech Service | Aquaculture Products & Solutions"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Aquaculture products and solutions including probiotics, feed additives, chemicals and antibiotic-free aquaculture inputs for shrimp and fish farming."
+  />
+
+  <!--
+  <meta
+    name="twitter:image"
+    content="https://yourdomain.com/og-image.jpg"
+  />
+
+  <meta
+    name="twitter:image:alt"
+    content="Salem Biotech Service — Aquaculture Products & Solutions"
+  />
+  -->
+
+
+  <!-- =====================================================
+       MOBILE
+       ===================================================== -->
+
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  />
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  />
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  />
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="Salem Biotech"
+  />
+
+
+  <!-- =====================================================
+       STRUCTURED DATA
+       =====================================================
+
+       We'll add the final Organization schema after
+       the real domain is available.
+
+       Do not use YOUR-DOMAIN.com here.
+       ===================================================== -->
+
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       REACT APPLICATION
+       ===================================================== -->
+
+  <div id="root"></div>
+
+
+  <!-- =====================================================
+       VITE / REACT ENTRY
+       ===================================================== -->
+
+  <script
+    type="module"
+    src="/src/main.jsx">
+  </script>
+
+
+</body>
+
 </html>
