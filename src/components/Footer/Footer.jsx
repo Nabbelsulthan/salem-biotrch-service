@@ -6,7 +6,7 @@ import {
     Phone,
 } from "lucide-react";
 
-import logo from "../../assets/logos/sbs-logo.PNG";
+import logo from "../../assets/logos/footer-logo.PNG";
 
 import "./Footer.css";
 
