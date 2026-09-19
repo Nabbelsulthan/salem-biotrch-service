@@ -19,7 +19,7 @@ import biocideImage from "../assets/products/biocide.png";
 import ammoCureImage from "../assets/products/ammocure.jpeg";
 import zooClearImage from "../assets/products/zoo-clear.png";
 import proLifeImage from "../assets/products/prolife.jpeg";
-import herculesTCImage from "../assets/products/hercules-tc.jpeg";
+import herculesTCImage from "../assets/products/hercules-tc.png";
 import zoogillImage from "../assets/products/zoo-gill.png";
 import heptoGutImage from "../assets/products/heptogut.png";
 

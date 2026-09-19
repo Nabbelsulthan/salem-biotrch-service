@@ -7,7 +7,7 @@ import softMaxImage from "../../assets/products/Soft-max.png";
 import zoogillImage from "../../assets/products/zoo-gill.png";
 import ammoCureImage from "../../assets/products/ammo-cure.jpeg";
 import growCImage from "../../assets/products/grow-c.png";
-import herculesImage from "../../assets/products/hercules-tc.jpeg";
+import herculesImage from "../../assets/products/hercules-tc.png";
 import zooclearImage from "../../assets/products/zoo-clear.png";
 import prolifeImage from "../../assets/products/prolife.jpeg";
 import oxyFreshImage from "../../assets/products/oxyfresh.png";

@@ -94,7 +94,7 @@ const Footer = () => {
                             Home
                         </a>
 
-                            <a href="/#certificates">
+                        <a href="/#certificates">
                             Certificates
                         </a>
 
@@ -179,7 +179,7 @@ const Footer = () => {
                 {/* =========================================
                     LARGE WORDMARK
                 ========================================= */}
-{/* 
+                {/* 
                 <motion.div
                     className="footer-wordmark"
                     initial={{
@@ -215,6 +215,11 @@ const Footer = () => {
                     <span>
                         © {currentYear} Salem Biotech Service.
                         All rights reserved.
+                    </span>
+
+                    <span>
+                        Designed & developed with ❤️ by <a href="https://www.linkedin.com/in/nabbel-sulthan-j-16a13827b/" target="_blank" rel="noopener noreferrer">Nabbel Sulthan J</a>
+
                     </span>
 
 
