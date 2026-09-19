@@ -1,0 +1,11 @@
+# =====================================================
+# Salem Biotech Service
+# Robots.txt
+# =====================================================
+
+User-agent: *
+
+Allow: /
+
+# Sitemap
+Sitemap: https://www.salembiotechservice.com/sitemap.xml

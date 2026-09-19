@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- =====================================================
+     Salem Biotech Service
+     XML Sitemap
+     ===================================================== -->
+
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+
+  <!-- ===================================================
+       HOMEPAGE
+       Includes:
+       - Home
+       - Certificates
+       - Products
+       - Contact
+       =================================================== -->
+
+  <url>
+
+    <loc>
+      https://www.salembiotechservice.com/
+    </loc>
+
+    <changefreq>
+      monthly
+    </changefreq>
+
+    <priority>
+      1.0
+    </priority>
+
+  </url>
+
+</urlset>
